@@ -63,7 +63,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="h-screen relative overflow-hidden bg-black font-body" id="hero">
+        <section className="h-screen relative overflow-hidden bg-[#080808] font-body" id="hero">
             <style>
                 {`
                 .hero-heading-main {
@@ -104,13 +104,13 @@ const Hero = () => {
                         <div className="absolute inset-0 z-0 overflow-hidden">
                             <video 
                                 autoPlay muted loop playsinline 
-                                className="hero-video-bg w-full h-full object-cover brightness-[0.35] contrast-[1.1]"
+                                className="hero-video-bg w-full h-full object-cover brightness-[0.8] saturate-[0.8]"
                             >
                                 <source src={slide.video} type="video/mp4" />
                             </video>
                             {/* Texture Overlay */}
                             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
+                            <div className="absolute inset-0 bg-gradient-to-b from-ivory/60 via-transparent to-ivory/80"></div>
                         </div>
 
                         {/* Asymmetrical Content Layout */}
@@ -126,12 +126,12 @@ const Hero = () => {
                                         </div>
                                         
                                         <h1 className="hero-heading-main flex flex-col">
-                                            <span className="text-[10vw] md:text-[8.5vw] text-white overflow-hidden">
+                                            <span className="text-[10vw] md:text-[8.5vw] text-[#fff] overflow-hidden">
                                                 {slide.title.split('').map((char, i) => (
                                                     <span key={i} className="char inline-block">{char}</span>
                                                 ))}
                                             </span>
-                                            <span className="text-[10vw] md:text-[8.5vw] text-transparent ml-[10vw]" style={{ WebkitTextStroke: '1.5px rgba(255,255,255,0.7)', filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.5))' }}>
+                                            <span className="text-[10vw] md:text-[8.5vw] text-transparent ml-[10vw]" style={{ WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.6)', filter: 'none' }}>
                                                 {slide.title2.split('').map((char, i) => (
                                                     <span key={i} className="char inline-block">{char}</span>
                                                 ))}
@@ -140,13 +140,13 @@ const Hero = () => {
                                     </div>
 
                                     <div className="flex flex-col md:flex-row items-start md:items-center gap-12">
-                                        <p className="text-ivory/40 text-base md:text-lg max-w-sm italic font-light leading-relaxed">
+                                        <p className="text-white/60 text-base md:text-lg max-w-sm italic font-light leading-relaxed">
                                             {slide.desc}
                                         </p>
                                         <div className="flex gap-4">
-                                            <a href="#profiles" className="group relative overflow-hidden px-10 py-5 bg-gold text-black text-[0.6rem] font-black uppercase tracking-widest no-underline">
+                                            <a href="#profiles" className="group relative overflow-hidden px-10 py-5 bg-gold text-white text-[0.6rem] font-black uppercase tracking-widest no-underline">
                                                 <span className="relative z-10">View Archive</span>
-                                                <div className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500"></div>
+                                                <div className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500"></div>
                                             </a>
                                         </div>
                                     </div>
@@ -156,7 +156,7 @@ const Hero = () => {
 
                         {/* Large Background Watermark per slide */}
                         <div className="absolute bottom-10 right-10 pointer-events-none opacity-[0.02] select-none text-right">
-                            <span className="text-[15vw] font-black uppercase text-white leading-none tracking-tighter">
+                            <span className="text-[15vw] font-black uppercase text-black leading-none tracking-tighter">
                                 Vol. 24
                             </span>
                         </div>
@@ -169,7 +169,7 @@ const Hero = () => {
                 {/* Index Indicator */}
                 <div className="flex items-baseline gap-2 overflow-hidden">
                     <span className="text-gold text-4xl font-black italic">01</span>
-                    <span className="text-white/20 text-sm font-bold">/ 02</span>
+                    <span className="text-black/20 text-sm font-bold">/ 02</span>
                 </div>
                 
                 {/* Vertical Progress Bar */}
@@ -182,20 +182,20 @@ const Hero = () => {
             <div className="absolute bottom-12 right-12 z-30 flex gap-4">
                 <button 
                     onClick={() => swiperRef.current?.slidePrev()}
-                    className="w-16 h-16 border border-white/10 flex items-center justify-center text-white/40 hover:text-gold hover:border-gold transition-all duration-500 group"
+                    className="w-16 h-16 border border-black/10 flex items-center justify-center text-black/40 hover:text-gold hover:border-gold transition-all duration-500 group"
                 >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                 </button>
                 <button 
                     onClick={() => swiperRef.current?.slideNext()}
-                    className="w-16 h-16 border border-white/10 flex items-center justify-center text-white/40 hover:text-gold hover:border-gold transition-all duration-500 group"
+                    className="w-16 h-16 border border-black/10 flex items-center justify-center text-black/40 hover:text-gold hover:border-gold transition-all duration-500 group"
                 >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
             </div>
 
             {/* Cinematic Noise & Vignette */}
-            <div className="absolute inset-0 pointer-events-none z-20 shadow-[inset_0_0_200px_rgba(0,0,0,0.8)]"></div>
+            <div className="absolute inset-0 pointer-events-none z-20 shadow-[inset_0_0_200px_rgba(255,255,255,0.5)]"></div>
         </section>
     );
 };

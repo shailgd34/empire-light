@@ -52,24 +52,24 @@ const Locations = () => {
     ];
 
     return (
-        <section className="bg-black py-12 md:py-20" id="locations">
+        <section className="bg-bg-primary py-12 md:py-20" id="locations">
             <div className="container-wide">
                 <div className="mb-12 anim-section-reveal">
                     <span className="text-gold uppercase tracking-[0.5em] font-bold text-[0.55rem] block mb-2">Registry Expansion</span>
-                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none">Northern <br /> Territory Index</h2>
+                    <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter leading-none text-black">Northern <br /> Territory Index</h2>
                 </div>
 
                 <div className="space-y-4">
                     {locationData.map((loc, idx) => (
-                        <div key={idx} className="anim-section-reveal border border-white/5 bg-charcoal/30 overflow-hidden transition-all duration-700">
+                        <div key={idx} className="anim-section-reveal border border-black/5 bg-bg-secondary/40 overflow-hidden transition-all duration-700">
                             <button 
                                 onClick={() => setOpenCity(openCity === loc.city ? null : loc.city)}
-                                className={`w-full flex justify-between items-center p-6 md:px-10 md:py-8 text-left transition-all duration-500 ${openCity === loc.city ? 'bg-white/5 border-b border-gold/20' : 'hover:bg-white/[0.02]'}`}
+                                className={`w-full flex justify-between items-center p-6 md:px-10 md:py-8 text-left transition-all duration-500 ${openCity === loc.city ? 'bg-black/5 border-b border-gold/20' : 'hover:bg-black/[0.02]'}`}
                             >
-                                <h3 className={`text-xl md:text-2xl font-black uppercase tracking-tighter transition-colors duration-500 ${openCity === loc.city ? 'text-gold' : 'text-white/60'}`}>
+                                <h3 className={`text-xl md:text-2xl font-bold uppercase tracking-tighter transition-colors duration-500 ${openCity === loc.city ? 'text-gold' : 'text-black/60'}`}>
                                     Find Escorts in {loc.city}
                                 </h3>
-                                <div className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-500 ${openCity === loc.city ? 'border-gold text-gold rotate-45' : 'border-white/10 text-white/40'}`}>
+                                <div className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-500 ${openCity === loc.city ? 'border-gold text-gold rotate-45' : 'border-black/10 text-black/40'}`}>
                                     <span className="text-2xl font-light">+</span>
                                 </div>
                             </button>
@@ -81,14 +81,14 @@ const Locations = () => {
                                             <a 
                                                 key={tagIdx} 
                                                 href="#" 
-                                                className="px-6 py-3 border border-white/10 rounded-full text-[0.6rem] md:text-[0.65rem] uppercase font-bold tracking-widest text-white/40 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300 no-underline"
+                                                className="px-6 py-3 border border-black/10 rounded-full text-[0.6rem] md:text-[0.65rem] uppercase font-bold tracking-widest text-black/40 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300 no-underline"
                                             >
                                                 {tag}
                                             </a>
                                         ))}
                                     </div>
                                     <div className="mt-10 flex justify-end">
-                                        <button className="text-[0.5rem] uppercase tracking-[0.4em] text-gold font-black border-b border-gold/40 pb-1 hover:text-white hover:border-white transition-all">
+                                        <button className="text-[0.5rem] uppercase tracking-[0.4em] text-gold font-bold border-b border-gold/40 pb-1 hover:text-black hover:border-black transition-all">
                                             Load More Services
                                         </button>
                                     </div>

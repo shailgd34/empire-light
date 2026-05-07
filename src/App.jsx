@@ -75,13 +75,15 @@ const App = () => {
         const onScroll = () => {
             const nav = document.getElementById('main-nav');
             if (window.scrollY > 100) {
-                nav.style.backgroundColor = 'rgba(8, 8, 8, 0.95)';
+                nav.style.backgroundColor = 'rgba(245, 245, 240, 0.98)';
                 nav.style.paddingTop = '1rem';
                 nav.style.paddingBottom = '1rem';
+                nav.classList.add('shadow-xl');
             } else {
                 nav.style.backgroundColor = 'transparent';
                 nav.style.paddingTop = '2rem';
                 nav.style.paddingBottom = '2rem';
+                nav.classList.remove('shadow-xl');
             }
         };
         window.addEventListener('scroll', onScroll);

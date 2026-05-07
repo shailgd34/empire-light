@@ -2,11 +2,14 @@
   --black: #080808;
   --charcoal: #0c0c0c;
   --ivory: #F5F5F0;
-  --ivory-70: rgba(245, 245, 240, 0.7);
-  --ivory-30: rgba(245, 245, 240, 0.3);
-  --gold: #C5A059;
-  --gold-dark: #8E6E36;
-  --gold-glow: rgba(197, 160, 89, 0.15);
+  --bg-primary: #F5F5F0;
+  --bg-secondary: #EBEBE6;
+  --text-primary: #080808;
+  --ivory-70: rgba(8, 8, 8, 0.7);
+  --ivory-30: rgba(8, 8, 8, 0.3);
+  --gold: #8E6E36;
+  --gold-dark: #6D5429;
+  --gold-glow: rgba(142, 110, 54, 0.1);
   
   --font-heading: 'Bricolage Grotesque', sans-serif;
   --font-body: 'Wix Madefor Display', sans-serif;
@@ -25,8 +28,8 @@
 }
 
 body {
-  background-color: var(--black);
-  color: var(--ivory);
+  background-color: var(--ivory);
+  color: var(--black);
   font-family: var(--font-body);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
