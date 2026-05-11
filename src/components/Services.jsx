@@ -51,7 +51,7 @@ const Services = () => {
                         <span className="text-gold font-bold text-xs tracking-[0.3em] uppercase">Expert Assistance</span>
                     </div>
                     <h2 className="text-4xl md:text-6xl font-bold leading-tight text-black">
-                        What <span className="text-transparent italic" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.1)' }}>We Offer</span>
+                        What <span className="text-transparent italic" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>We Offer</span>
                     </h2>
                 </div>
 

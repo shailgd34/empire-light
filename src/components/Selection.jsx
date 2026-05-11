@@ -31,8 +31,8 @@ const Selection = () => {
                 <div className="flex md:flex-row justify-between items-start md:items-end mb-20 gap-8 anim-section-reveal">
                     <div className="space-y-4">
                         <span className="text-gold font-bold text-base block tracking-widest uppercase">Available Girls</span>
-                        <h2 className="text-5xl md:text-8xl font-bold leading-[0.85] text-black">
-                            Our Elite <br /> <span className="text-transparent" style={{ WebkitTextStroke: '1px var(--ivory-30)' }}>Selection</span>
+                        <h2 className="text-4xl md:text-6xl font-bold leading-tight text-black">
+                            Our Elite <span className="text-transparent italic" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>Selection</span>
                         </h2>
                     </div>
                     

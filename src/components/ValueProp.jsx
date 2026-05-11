@@ -42,8 +42,8 @@ const ValueProp = () => {
                     <div className="space-y-12 anim-section-reveal">
                         <div className="space-y-6">
                             <span className="text-gold font-bold text-base block tracking-widest uppercase">About Our Agency</span>
-                            <h2 className="text-5xl md:text-8xl font-bold leading-[0.85] text-black">
-                                Real Girls <br /> <span className="text-transparent" style={{ WebkitTextStroke: '1px var(--ivory-30)' }}>Real Profiles</span>
+                            <h2 className="text-4xl md:text-6xl font-bold leading-tight text-black">
+                                About Our <span className="italic text-transparent" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>Agency</span>
                             </h2>
                         </div>
                         

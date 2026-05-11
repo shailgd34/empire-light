@@ -27,55 +27,58 @@ const FAQs = () => {
     ];
 
     return (
-        <section className="bg-bg-secondary py-24 md:py-32 relative overflow-hidden" id="faq">
+        <section className="bg-bg-secondary py-16 md:py-24 relative overflow-hidden" id="faq">
             {/* Background Texture */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none select-none">
-                <span className="text-[30vw] font-bold text-black absolute -top-20 -left-20 leading-none">FAQ</span>
+            <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none select-none">
+                <span className="text-[20vw] font-bold text-black absolute -top-10 -left-10 leading-none">FAQ</span>
             </div>
 
             <div className="container-wide relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-start">
                     
                     {/* Left: Heading */}
-                    <div className="lg:col-span-5 space-y-12 anim-section-reveal">
-                        <div className="space-y-6">
-                            <span className="text-gold font-bold text-base block tracking-widest uppercase">Common Inquiries</span>
-                            <h2 className="text-5xl md:text-8xl font-bold leading-[0.85] text-black">
-                                Help & <br /> <span className="text-transparent italic" style={{ WebkitTextStroke: '1.5px rgba(0,0,0,0.1)' }}>Support</span>
+                    <div className="lg:col-span-5 space-y-8 anim-section-reveal">
+                        <div className="space-y-4">
+                            <div className="flex items-center gap-4">
+                                <div className="w-8 h-px bg-gold/30"></div>
+                                <span className="text-gold font-bold text-xs tracking-[0.3em] uppercase">Common Inquiries</span>
+                            </div>
+                            <h2 className="text-4xl md:text-6xl font-bold leading-tight text-black">
+                                Help & <span className="text-transparent italic" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>Support</span>
                             </h2>
                         </div>
-                        <p className="text-black/60 text-lg md:text-xl font-medium leading-relaxed max-w-sm">
+                        <p className="text-black/60 text-base md:text-lg font-medium leading-relaxed max-w-sm">
                             We believe in full transparency. If you have a question that isn't answered here, please contact our 24/7 concierge.
                         </p>
-                        <div className="pt-8">
-                            <a href="#contact" className="inline-flex items-center gap-4 text-black font-bold hover:text-gold transition-colors group no-underline">
+                        <div className="pt-4">
+                            <a href="#contact" className="inline-flex items-center gap-4 text-black font-bold hover:text-gold transition-colors group no-underline text-sm">
                                 <span>Contact Support</span>
-                                <div className="w-12 h-px bg-gold group-hover:w-full transition-all"></div>
+                                <div className="w-8 h-px bg-gold group-hover:w-full transition-all"></div>
                             </a>
                         </div>
                     </div>
 
                     {/* Right: Accordion */}
-                    <div className="lg:col-span-7 space-y-4 anim-section-reveal">
+                    <div className="lg:col-span-7 space-y-2 anim-section-reveal">
                         {faqs.map((faq, idx) => (
-                            <div key={idx} className={`group border-b border-black/5 transition-all duration-700 ${openIndex === idx ? 'pb-12' : 'pb-8'}`}>
+                            <div key={idx} className={`group border-b border-black/5 transition-all duration-700 ${openIndex === idx ? 'pb-8' : 'pb-6'}`}>
                                 <button 
                                     onClick={() => setOpenIndex(openIndex === idx ? -1 : idx)}
-                                    className="w-full flex items-center justify-between text-left py-4 outline-none"
+                                    className="w-full flex items-center justify-between text-left py-3 outline-none"
                                 >
-                                    <div className="flex items-center gap-6">
-                                        <span className={`text-xs font-bold transition-colors duration-500 ${openIndex === idx ? 'text-gold' : 'text-black/20'}`}>0{idx + 1}</span>
-                                        <h3 className={`text-xl md:text-2xl font-bold transition-all duration-500 ${openIndex === idx ? 'text-black italic translate-x-2' : 'text-black/70 group-hover:text-black'}`}>
+                                    <div className="flex items-center gap-5">
+                                        <span className={`text-[0.6rem] font-bold transition-colors duration-500 ${openIndex === idx ? 'text-gold' : 'text-black/20'}`}>0{idx + 1}</span>
+                                        <h3 className={`text-lg md:text-xl font-bold transition-all duration-500 ${openIndex === idx ? 'text-black italic translate-x-2' : 'text-black/70 group-hover:text-black'}`}>
                                             {faq.q}
                                         </h3>
                                     </div>
-                                    <div className={`w-10 h-10 rounded-full border border-black/5 flex items-center justify-center transition-all duration-700 ${openIndex === idx ? 'bg-black text-white rotate-180' : 'group-hover:border-gold'}`}>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
+                                    <div className={`w-8 h-8 rounded-full border border-black/5 flex items-center justify-center transition-all duration-700 ${openIndex === idx ? 'bg-black text-white rotate-180' : 'group-hover:border-gold'}`}>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
                                     </div>
                                 </button>
                                 
-                                <div className={`overflow-hidden transition-all duration-700 ease-in-out ${openIndex === idx ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
-                                    <p className="text-black/50 text-lg leading-relaxed pl-14 max-w-2xl font-medium">
+                                <div className={`overflow-hidden transition-all duration-700 ease-in-out ${openIndex === idx ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                                    <p className="text-black/50 text-base leading-relaxed pl-12 max-w-2xl font-medium">
                                         {faq.a}
                                     </p>
                                 </div>

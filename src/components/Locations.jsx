@@ -71,7 +71,7 @@ const Locations = () => {
                                 <span className="text-gold font-bold text-xs tracking-[0.3em] uppercase">Where We Cover</span>
                             </div>
                             <h2 className="text-4xl md:text-6xl font-bold leading-tight text-black">
-                                Major <span className="italic text-transparent" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.1)' }}>Hubs</span>
+                                Major <span className="italic text-transparent" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>Hubs</span>
                             </h2>
                         </div>
 
@@ -80,7 +80,7 @@ const Locations = () => {
                                 <button 
                                     key={idx}
                                     onMouseEnter={() => setActiveLoc(idx)}
-                                    className="group flex items-center justify-between py-6 border-b border-black/5 text-left transition-all duration-500"
+                                    className="group flex items-center justify-between py-5 border-b border-black/5 text-left transition-all duration-500"
                                 >
                                     <div className="flex items-baseline gap-6">
                                         <span className={`text-xs font-bold transition-colors duration-500 ${activeLoc === idx ? 'text-gold' : 'text-black/20'}`}>0{idx + 1}</span>
@@ -96,73 +96,49 @@ const Locations = () => {
                         </div>
                     </div>
 
-                    {/* Right: City Details */}
+                    {/* Right: City Details Card */}
                     <div className="lg:col-span-6 anim-section-reveal">
-                        <div className="relative aspect-[4/5] bg-bg-secondary border border-black/5 overflow-hidden shadow-2xl">
-                            {/* Background Image */}
-                            {locations.map((loc, idx) => (
-                                <img 
-                                    key={idx} 
-                                    src={loc.img} 
-                                    alt="" 
-                                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${activeLoc === idx ? 'opacity-20 scale-100' : 'opacity-0 scale-110'}`} 
-                                />
-                            ))}
+                        <div className="bg-bg-secondary h-full relative overflow-hidden group shadow-2xl border border-black/5">
+                            <img 
+                                src={locations[activeLoc].img} 
+                                alt={locations[activeLoc].city} 
+                                className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-[2000ms]" 
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                             
-                            <div className="relative h-full p-12 md:p-16 flex flex-col justify-between">
-                                <div className="space-y-8">
-                                    <div className="flex justify-between items-start">
-                                        <div className="space-y-2">
-                                            <span className="text-gold font-bold text-sm block tracking-widest uppercase">{locations[activeLoc].area}</span>
-                                            <h3 className="text-3xl font-bold text-black italic">Area Details</h3>
-                                        </div>
-                                        <div className="w-16 h-1 bg-gold"></div>
+                            <div className="absolute bottom-0 left-0 p-10 md:p-14 space-y-8 w-full">
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-px bg-gold/50"></div>
+                                        <span className="text-gold font-bold text-xs uppercase tracking-widest">{locations[activeLoc].area}</span>
                                     </div>
-                                    
-                                    <p className="text-black/70 text-lg md:text-xl font-medium leading-relaxed">
+                                    <h3 className="text-4xl md:text-5xl font-bold text-white italic">{locations[activeLoc].city}</h3>
+                                    <p className="text-white/60 text-base md:text-lg max-w-sm font-medium leading-relaxed">
                                         {locations[activeLoc].desc}
                                     </p>
                                 </div>
 
-                                <div className="space-y-10">
-                                    <div className="grid grid-cols-1 gap-4">
-                                        {locations[activeLoc].stats.map((stat, i) => (
-                                            <div key={i} className="flex items-center gap-4">
-                                                <div className="w-6 h-px bg-gold"></div>
-                                                <span className="text-black font-bold text-sm tracking-widest uppercase">{stat}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    
-                                    <div className="pt-8 border-t border-black/10 flex justify-between items-center">
-                                        <a href="#contact" className="px-10 py-5 bg-black text-white text-sm font-bold hover:bg-gold hover:text-black transition-all duration-500 no-underline shadow-xl">
-                                            Book in {locations[activeLoc].city}
-                                        </a>
-                                        <span className="text-black/10 text-6xl font-bold italic">Hub</span>
-                                    </div>
+                                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
+                                    {locations[activeLoc].stats.map((stat, sIdx) => (
+                                        <div key={sIdx} className="space-y-1">
+                                            <span className="text-gold font-bold text-[0.65rem] uppercase tracking-widest block">{stat}</span>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Other Areas */}
-                <div className="mt-32 pt-20 border-t border-black/10 anim-section-reveal">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                        <div className="lg:col-span-4 space-y-4">
-                            <h4 className="text-2xl font-bold text-black italic">Nearby Areas</h4>
-                            <p className="text-black/40 text-sm font-medium">We also cover all surrounding towns in South & West Yorkshire.</p>
-                        </div>
-                        <div className="lg:col-span-8">
-                            <div className="flex flex-wrap gap-x-12 gap-y-6">
-                                {surroundings.map((area, idx) => (
-                                    <div key={idx} className="group cursor-default">
-                                        <span className="text-black/20 text-xs font-bold block mb-1">Area</span>
-                                        <span className="text-black/70 text-lg font-bold group-hover:text-gold transition-colors">{area}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                {/* Bottom Bar: Other Areas */}
+                <div className="mt-16 pt-8 border-t border-black/5 flex flex-wrap items-center gap-x-12 gap-y-6 anim-section-reveal">
+                    <span className="text-xs font-bold text-black/30 uppercase tracking-[0.4em]">Surrounding Areas</span>
+                    <div className="flex flex-wrap gap-8">
+                        {surroundings.map((area) => (
+                            <span key={area} className="text-xs font-bold text-black/60 hover:text-gold cursor-default transition-colors uppercase tracking-widest">
+                                {area}
+                            </span>
+                        ))}
                     </div>
                 </div>
             </div>

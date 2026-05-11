@@ -63,7 +63,7 @@ const OurEthos = () => {
                                 <span className="text-gold font-bold text-xs tracking-[0.3em] uppercase">Expert Selection</span>
                             </div>
                             <h2 className="text-4xl md:text-6xl font-bold leading-tight text-black">
-                                Our Agency <span className="text-transparent font-light italic" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.1)' }}>Standards</span>
+                                Our Agency <span className="text-transparent font-light italic" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>Standards</span>
                             </h2>
                         </div>
                         
