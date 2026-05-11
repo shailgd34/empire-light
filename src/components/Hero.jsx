@@ -13,17 +13,17 @@ const Hero = () => {
     const slides = [
         {
             video: '/video/14973850-hd_1920_1080_24fps.mp4',
-            sub: 'Southern Prestige / Vol. 24',
-            title: 'Exemplary',
-            title2: 'Mandate',
-            desc: 'The definitive Northern registry for distinguished companionship.'
+            sub: 'Sheffield Based / Under New Management',
+            title: 'Real Girls',
+            title2: 'Real Profiles',
+            desc: 'The premier Sheffield agency for distinguished outcall companionship. Now under new management with a fresh commitment to transparency and excellence.'
         },
         {
             video: '/video/grok-video-8c7d4c4b-ab3a-418c-a7a5-09b3da8847b5-1-1.mp4',
-            sub: 'Exclusive Archive / Est. 2012',
+            sub: 'South Yorkshire & Beyond',
             title: 'Elite',
-            title2: 'Selection',
-            desc: 'Uncompromising discretion paired with world-class grace.'
+            title2: 'Outcall',
+            desc: 'Serving Sheffield, Leeds, Nottingham and major Northern hubs. Our companions are vetted for sophistication, charisma, and authenticity.'
         }
     ];
 
@@ -120,7 +120,7 @@ const Hero = () => {
                                     <div className="space-y-6">
                                         <div className="flex items-center gap-4">
                                             <div className="hero-line h-px w-24 bg-gold origin-left"></div>
-                                            <span className="text-gold text-[0.55rem] font-black uppercase tracking-[0.8em]">
+                                            <span className="text-gold text-base font-bold">
                                                 {slide.sub}
                                             </span>
                                         </div>
@@ -144,8 +144,8 @@ const Hero = () => {
                                             {slide.desc}
                                         </p>
                                         <div className="flex gap-4">
-                                            <a href="#profiles" className="group relative overflow-hidden px-10 py-5 bg-gold text-white text-[0.6rem] font-black uppercase tracking-widest no-underline">
-                                                <span className="relative z-10">View Archive</span>
+                                            <a href="#profiles" className="group relative overflow-hidden px-10 py-5 bg-gold text-white text-base font-bold no-underline">
+                                                <span className="relative z-10">View All Profiles</span>
                                                 <div className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500"></div>
                                             </a>
                                         </div>

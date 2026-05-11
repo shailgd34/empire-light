@@ -12,6 +12,10 @@ import Services from './components/Services';
 import TrustSignals from './components/TrustSignals';
 import Protocol from './components/Protocol';
 import FAQs from './components/FAQs';
+import JoinBanner from './components/JoinBanner';
+import SEOContent from './components/SEOContent';
+import OurEthos from './components/OurEthos';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import StickyCTA from './components/StickyCTA';
@@ -20,34 +24,6 @@ import Partners from './components/Partners';
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-    useEffect(() => {
-        // 1. Custom Cursor Logic
-        const cursor = document.getElementById('cursor');
-        const follower = document.getElementById('cursor-follower');
-        
-        if (cursor && follower) {
-            const onMouseMove = (e) => {
-                gsap.to(cursor, { x: e.clientX - 6, y: e.clientY - 6, duration: 0 });
-                gsap.to(follower, { x: e.clientX - 17, y: e.clientY - 17, duration: 0.3 });
-            };
-            document.addEventListener('mousemove', onMouseMove);
-
-            const interactive = document.querySelectorAll('a, button, .swiper-slide, .faq-trigger');
-            interactive.forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    gsap.to(cursor, { scale: 3, opacity: 0.2, duration: 0.3 });
-                    gsap.to(follower, { scale: 1.5, borderColor: 'var(--gold)', duration: 0.3 });
-                });
-                el.addEventListener('mouseleave', () => {
-                    gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.3 });
-                    gsap.to(follower, { scale: 1, borderColor: 'rgba(255,255,255,0.1)', duration: 0.3 });
-                });
-            });
-
-            return () => document.removeEventListener('mousemove', onMouseMove);
-        }
-    }, []);
-
     useEffect(() => {
         // 2. Hero Logic (Handled within Hero.jsx)
 
@@ -71,24 +47,7 @@ const App = () => {
 
         // 4. Mobile Menu Logic (Now handled natively within Nav.jsx state)
 
-        // 5. Navbar Scroll Effect
-        const onScroll = () => {
-            const nav = document.getElementById('main-nav');
-            if (window.scrollY > 100) {
-                nav.style.backgroundColor = 'rgba(245, 245, 240, 0.98)';
-                nav.style.paddingTop = '1rem';
-                nav.style.paddingBottom = '1rem';
-                nav.classList.add('shadow-xl');
-            } else {
-                nav.style.backgroundColor = 'transparent';
-                nav.style.paddingTop = '2rem';
-                nav.style.paddingBottom = '2rem';
-                nav.classList.remove('shadow-xl');
-            }
-        };
-        window.addEventListener('scroll', onScroll);
-
-        // 6. Swiper Initialization
+        // 5. Swiper Initialization
         if (typeof Swiper !== 'undefined' && document.querySelector('.archive-swiper')) {
             new Swiper('.archive-swiper', {
                 slidesPerView: 'auto',
@@ -107,7 +66,7 @@ const App = () => {
             });
         }
 
-        return () => window.removeEventListener('scroll', onScroll);
+        return () => {};
     }, []);
 
     return (
@@ -117,12 +76,16 @@ const App = () => {
                 <Hero />
                 <ValueProp />
                 <Selection />
+                <OurEthos />
                 <Locations />
                 <Services />
                 <TrustSignals />
                 <Protocol />
+                <Testimonials />
                 <FAQs />
+                <JoinBanner />
                 <Contact />
+                <SEOContent />
             </main>
             <Partners />
             <Footer />

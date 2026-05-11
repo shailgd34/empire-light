@@ -8,32 +8,31 @@ const Footer = () => {
                     {/* Primary Branding */}
                     <div className="space-y-6 anim-section-reveal">
                         <img src="/images/logo.webp" alt="Empire Escorts" className="h-12 md:h-16 w-auto mx-auto" />
-                        <p className="text-black/40 text-[0.6rem] uppercase tracking-[0.5em] font-bold max-w-sm mx-auto">
-                            The Northern Mandate / Est. 2012 / Sheffield HQ
+                        <p className="text-black/60 text-sm font-bold max-w-sm mx-auto">
+                            Real Girls, Real Profiles. Sheffield Based.
                         </p>
                     </div>
 
                     {/* Navigation Links (Sync Verbatim) */}
                     <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 anim-section-reveal">
-                        <a href="/" className="text-[0.55rem] uppercase tracking-[0.4em] font-bold text-black hover:text-gold transition-colors no-underline">Home</a>
-                        <a href="#profiles" className="text-[0.55rem] uppercase tracking-[0.4em] font-bold text-black hover:text-gold transition-colors no-underline">Our Girls</a>
-                        <a href="/blogs" className="text-[0.55rem] uppercase tracking-[0.4em] font-bold text-black hover:text-gold transition-colors no-underline">Blogs</a>
-                        <a href="/contact" className="text-[0.55rem] uppercase tracking-[0.4em] font-bold text-black hover:text-gold transition-colors no-underline">Contact Us</a>
-                        <a href="/join" className="text-[0.55rem] uppercase tracking-[0.4em] font-bold text-black hover:text-gold transition-colors no-underline">Join Us</a>
-                        <a href="#explore" className="text-[0.55rem] uppercase tracking-[0.4em] font-bold text-black hover:text-gold transition-colors no-underline">Explore</a>
+                        <a href="/" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Home</a>
+                        <a href="#profiles" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Our Girls</a>
+                        <a href="/blogs" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Blogs</a>
+                        <a href="/contact" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Contact Us</a>
+                        <a href="/join" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Join Us</a>
+                        <a href="#explore" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Help & FAQ</a>
                     </div>
 
                     {/* Legal & Copyright */}
                     <div className="w-full pt-12 border-t border-black/5 space-y-8 anim-section-reveal">
                         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                            <span className="text-[0.5rem] uppercase tracking-[0.3em] text-black/20 font-bold">
-                                &copy; 2024 Empire Escorts. All Rights Reserved.
-                            </span>
-                            
-                            <div className="flex gap-8">
-                                <a href="/terms" className="text-[0.5rem] uppercase tracking-[0.3em] text-black/20 hover:text-black transition-colors no-underline">Terms of Service</a>
-                                <a href="/privacy" className="text-[0.5rem] uppercase tracking-[0.3em] text-black/20 hover:text-black transition-colors no-underline">Privacy Policy</a>
-                            </div>
+                            <p className="text-sm text-black/60 font-bold mb-4">
+                            © 2026 Empire Escorts. All Rights Reserved. Northern Excellence.
+                        </p>
+                        <div className="flex justify-center gap-8">
+                            <a href="/terms" className="text-xs text-black/40 hover:text-black transition-colors no-underline">Terms of Service</a>
+                            <a href="/privacy" className="text-xs text-black/40 hover:text-black transition-colors no-underline">Privacy Policy</a>
+                        </div>
                         </div>
 
                         {/* Agency Watermark */}

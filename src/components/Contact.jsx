@@ -2,52 +2,83 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <section id="contact" className="bg-bg-secondary py-16 md:py-24 relative border-t border-black/5">
-            <div className="container-wide">
+        <section id="contact" className="bg-bg-primary py-24 md:py-32 relative overflow-hidden" id="contact">
+            {/* Background Texture */}
+            <div className="absolute inset-0 opacity-[0.02] pointer-events-none select-none">
+                <span className="text-[35vw] font-bold text-black absolute -bottom-20 -right-20 leading-none rotate-6">Secure</span>
+            </div>
+
+            <div className="container-wide relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                    <div className="space-y-12">
+                    
+                    {/* Left: Direct Contact */}
+                    <div className="space-y-16 anim-section-reveal">
                         <div className="space-y-6">
-                            <span className="text-gold uppercase tracking-[1em] font-bold text-[0.65rem] block">Secure Engagement</span>
-                            <h2 className="text-5xl md:text-[8rem] font-bold uppercase leading-[0.85] tracking-tighter text-black">
-                                Start Your <br /> <span className="text-transparent italic" style={{ WebkitTextStroke: '1px var(--ivory-30)' }}>Journey.</span>
+                            <span className="text-gold font-bold text-base block tracking-widest uppercase">Contact Our Concierge</span>
+                            <h2 className="text-5xl md:text-8xl font-bold leading-[0.85] text-black">
+                                Book Your <br /> <span className="text-transparent italic" style={{ WebkitTextStroke: '1.5px rgba(0,0,0,0.1)' }}>Companion.</span>
                             </h2>
                         </div>
-                        <p className="text-black/60 text-xl md:text-2xl leading-relaxed italic font-light tracking-wide max-w-xl">
-                            Our concierge is available 24/7 to facilitate your inquiry with absolute discretion.
-                        </p>
-                        
-                        <div className="space-y-8 pt-4">
-                            <div className="flex flex-col gap-2">
-                                <span className="text-gold uppercase tracking-widest text-[0.6rem] font-bold">Secure Line</span>
-                                <a href="tel:+447368428158" className="text-3xl md:text-5xl text-black font-bold hover:text-gold transition-colors no-underline">07368 428 158</a>
+
+                        <div className="space-y-12">
+                            <div className="space-y-4">
+                                <p className="text-black/80 text-xl md:text-2xl font-bold italic leading-relaxed border-l-4 border-gold pl-10">
+                                    Our team is available 24 hours a day, 7 days a week. We pride ourselves on 100% discretion and privacy.
+                                </p>
                             </div>
-                            <div className="flex flex-col gap-2">
-                                <span className="text-gold uppercase tracking-widest text-[0.6rem] font-bold">Email Domain</span>
-                                <a href="mailto:admin@empireescort.co.uk" className="text-xl md:text-2xl text-black/40 font-light italic hover:text-gold transition-colors no-underline">admin@empireescort.co.uk</a>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-8 border-t border-black/10">
+                                <div className="space-y-4">
+                                    <span className="text-gold text-xs font-bold uppercase tracking-widest">Call or Text</span>
+                                    <a href="tel:+447368428158" className="text-2xl md:text-3xl text-black font-bold hover:text-gold transition-all duration-500 no-underline block">07368 428 158</a>
+                                </div>
+                                <div className="space-y-4">
+                                    <span className="text-gold text-xs font-bold uppercase tracking-widest">WhatsApp</span>
+                                    <a href="https://wa.me/447368428158" className="text-2xl md:text-3xl text-black font-bold hover:text-gold transition-all duration-500 no-underline block">Secure Message</a>
+                                </div>
                             </div>
+                        </div>
+
+                        <div className="flex items-center gap-4 text-black/30">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span className="text-xs font-bold uppercase tracking-widest">End-to-End Encrypted Inquiry</span>
                         </div>
                     </div>
 
-                    <div className="bg-white p-12 md:p-16 space-y-10 border border-black/5 shadow-2xl">
-                        <div className="space-y-4">
-                            <h3 className="text-2xl font-bold uppercase tracking-tight text-black">Direct Message</h3>
-                            <p className="text-black/30 text-sm italic">Encrypted inquiry for professional companionship.</p>
+                    {/* Right: Premium Form */}
+                    <div className="bg-bg-secondary p-12 md:p-20 shadow-2xl border border-black/5 relative overflow-hidden group anim-section-reveal">
+                        {/* Decorative Gradient */}
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl rounded-full"></div>
+                        
+                        <div className="relative z-10 space-y-12">
+                            <div className="space-y-4">
+                                <h3 className="text-3xl font-bold text-black italic">Booking Inquiry</h3>
+                                <p className="text-black/50 text-sm font-medium">Please fill in your details and requirements below.</p>
+                            </div>
+
+                            <form className="space-y-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div className="space-y-3">
+                                        <label className="text-xs font-bold text-black/40 uppercase tracking-widest">Your Name</label>
+                                        <input type="text" className="w-full bg-black/5 border-b border-black/10 py-4 text-black text-lg focus:outline-none focus:border-gold transition-all bg-transparent" placeholder="Full Name" />
+                                    </div>
+                                    <div className="space-y-3">
+                                        <label className="text-xs font-bold text-black/40 uppercase tracking-widest">Contact Info</label>
+                                        <input type="text" className="w-full bg-black/5 border-b border-black/10 py-4 text-black text-lg focus:outline-none focus:border-gold transition-all bg-transparent" placeholder="Phone or Email" />
+                                    </div>
+                                </div>
+                                <div className="space-y-3">
+                                    <label className="text-xs font-bold text-black/40 uppercase tracking-widest">Preferred Companion & Location</label>
+                                    <textarea className="w-full bg-black/5 border-b border-black/10 py-4 text-black text-lg focus:outline-none focus:border-gold transition-all bg-transparent h-32 resize-none" placeholder="Who would you like to see, where, and at what time?"></textarea>
+                                </div>
+                                <div className="pt-6">
+                                    <button className="group relative w-full overflow-hidden bg-black text-white py-6 text-base font-bold tracking-widest uppercase transition-all duration-700">
+                                        <span className="relative z-10">Send Secure Message</span>
+                                        <div className="absolute inset-0 bg-gold translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                        <form className="space-y-6">
-                            <div className="space-y-2">
-                                <label className="text-[0.6rem] uppercase tracking-widest font-bold text-black/20">Identity / Name</label>
-                                <input type="text" className="w-full bg-black/5 border border-black/10 p-5 text-black text-sm focus:outline-none focus:border-gold transition-colors" placeholder="Preferred Name" />
-                            </div>
-                            <div className="space-y-2">
-                                <label className="text-[0.6rem] uppercase tracking-widest font-bold text-black/20">Contact Channel</label>
-                                <input type="email" className="w-full bg-black/5 border border-black/10 p-5 text-black text-sm focus:outline-none focus:border-gold transition-colors" placeholder="Email or Phone Number" />
-                            </div>
-                            <div className="space-y-2">
-                                <label className="text-[0.6rem] uppercase tracking-widest font-bold text-black/20">The Inquiry</label>
-                                <textarea className="w-full bg-black/5 border border-black/10 p-5 text-black text-sm focus:outline-none focus:border-gold h-32 transition-colors" placeholder="Message Details..."></textarea>
-                            </div>
-                            <button className="w-full py-6 bg-gold text-black text-[0.7rem] font-bold uppercase tracking-[0.4em] hover:bg-black hover:text-white transition-all duration-500 shadow-2xl">Transmit Message</button>
-                        </form>
                     </div>
                 </div>
             </div>

@@ -27,7 +27,7 @@ const Nav = () => {
     }, [isMenuOpen]);
 
     return (
-        <nav id="main-nav" className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-8 md:px-16 flex justify-between items-center ${scrolled ? 'py-4 bg-bg-primary/95 backdrop-blur-xl shadow-xl' : 'py-8 bg-transparent'}`}>
+        <nav id="main-nav" className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 px-8 md:px-16 flex justify-between items-center ${scrolled ? 'py-4 bg-bg-primary shadow-xl' : 'py-8 bg-transparent'}`}>
             {/* Logo */}
             <div className="flex items-center gap-4">
                 <img src="/images/logo.webp" alt="Empire Escorts" className="h-8 md:h-12 w-auto transition-all duration-700" />
@@ -35,23 +35,23 @@ const Nav = () => {
 
             {/* Desktop Navigation (Syncing with Sidebar) */}
             <div className="hidden lg:flex items-center gap-10">
-                <a href="/" className={`text-[0.55rem] uppercase tracking-[0.4em] font-black transition-colors no-underline border-b border-gold/40 pb-1 ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}>Home</a>
+                <a href="/" className={`text-base font-bold transition-colors no-underline border-b border-gold/40 pb-1 ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}>Home</a>
                 
                 {/* Our Girls Dropdown */}
                 <div className="relative group">
                     <button 
                         onMouseEnter={() => setActiveDropdown('girls')}
-                        className={`flex items-center gap-2 text-[0.55rem] uppercase tracking-[0.4em] font-black transition-colors ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}
+                        className={`flex items-center gap-2 text-base font-bold transition-colors ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}
                     >
                         Our Girls <svg width="6" height="6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
                     <div 
                         onMouseLeave={() => setActiveDropdown(null)}
-                        className={`absolute top-full left-0 mt-4 w-56 bg-ivory/98 backdrop-blur-2xl transition-all duration-500 border border-black/5 ${activeDropdown === 'girls' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4'}`}
+                        className={`absolute top-full left-0 mt-4 w-56 bg-ivory shadow-2xl transition-all duration-500 border border-black/5 ${activeDropdown === 'girls' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4'}`}
                     >
                         <div className="flex flex-col">
-                            {['All Girls', 'Sheffield Escorts', 'Leeds Escorts', 'Nottingham Escorts', 'Doncaster Escorts', 'Barnsley Escorts', 'Rotherham Escorts', 'Chesterfield Escorts'].map((item) => (
-                                <a key={item} href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="px-6 py-4 text-[0.5rem] uppercase tracking-widest font-bold text-black/50 hover:text-gold hover:bg-black/[0.02] border-b border-black/5 transition-all no-underline">
+                            {['All Girls', 'Sheffield Girls', 'Leeds Girls', 'Nottingham Girls', 'Doncaster Girls', 'Barnsley Girls', 'Rotherham Girls', 'Chesterfield Girls'].map((item) => (
+                                <a key={item} href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="px-6 py-4 text-sm font-semibold text-black/70 hover:text-gold hover:bg-black/[0.02] border-b border-black/5 transition-all no-underline">
                                     {item}
                                 </a>
                             ))}
@@ -59,25 +59,25 @@ const Nav = () => {
                     </div>
                 </div>
 
-                <a href="/blogs" className={`text-[0.55rem] uppercase tracking-[0.4em] font-black transition-colors no-underline ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}>Blogs</a>
-                <a href="/contact" className={`text-[0.55rem] uppercase tracking-[0.4em] font-black transition-colors no-underline ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}>Contact Us</a>
-                <a href="/join" className={`text-[0.55rem] uppercase tracking-[0.4em] font-black transition-colors no-underline ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}>Join Us</a>
+                <a href="/blogs" className={`text-base font-bold transition-colors no-underline ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}>Blogs</a>
+                <a href="/contact" className={`text-base font-bold transition-colors no-underline ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}>Contact Us</a>
+                <a href="/join" className={`text-base font-bold transition-colors no-underline ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}>Join Us</a>
 
                 {/* Explore Dropdown */}
                 <div className="relative group">
                     <button 
                         onMouseEnter={() => setActiveDropdown('explore')}
-                        className={`flex items-center gap-2 text-[0.55rem] uppercase tracking-[0.4em] font-black transition-colors ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}
+                        className={`flex items-center gap-2 text-base font-bold transition-colors ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}
                     >
-                        Explore <svg width="6" height="6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6"/></svg>
+                        Help & FAQ <svg width="6" height="6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
                     <div 
                         onMouseLeave={() => setActiveDropdown(null)}
-                        className={`absolute top-full left-0 mt-4 w-56 bg-ivory/98 backdrop-blur-2xl transition-all duration-500 border border-black/5 ${activeDropdown === 'explore' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4'}`}
+                        className={`absolute top-full left-0 mt-4 w-56 bg-ivory shadow-2xl transition-all duration-500 border border-black/5 ${activeDropdown === 'explore' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4'}`}
                     >
                         <div className="flex flex-col">
-                            {['About Us', 'Why Us', 'Opening Times', 'FAQ'].map((item) => (
-                                <a key={item} href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="px-6 py-4 text-[0.5rem] uppercase tracking-widest font-bold text-black/50 hover:text-gold hover:bg-black/[0.02] border-b border-black/5 transition-all no-underline">
+                            {['About Us', 'How to Book', 'Opening Times', 'FAQ'].map((item) => (
+                                <a key={item} href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="px-6 py-4 text-sm font-semibold text-black/70 hover:text-gold hover:bg-black/[0.02] border-b border-black/5 transition-all no-underline">
                                     {item}
                                 </a>
                             ))}
@@ -97,10 +97,10 @@ const Nav = () => {
             </button>
 
             {/* Sidebar (Syncing with Primary Nav Links) */}
-            <div className={`fixed inset-0 z-[2500] bg-ivory transition-all duration-700 flex flex-col ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'} pointer-events-none ${isMenuOpen ? 'pointer-events-auto' : ''}`}>
+            <div className={`fixed inset-0 z-[2500] bg-bg-primary shadow-2xl transition-all duration-700 flex flex-col ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'} pointer-events-none ${isMenuOpen ? 'pointer-events-auto' : ''}`}>
                 <div className="p-8 md:p-16 flex justify-between items-center relative z-10">
                     <img src="/images/logo.webp" alt="Empire" className="h-8 md:h-12 w-auto menu-anim" />
-                    <button onClick={closeMenu} className="text-[0.6rem] uppercase tracking-[0.5em] text-black/60 hover:text-gold transition-colors font-bold border-l border-black/10 pl-8">Exit [X]</button>
+                    <button onClick={closeMenu} className="text-sm text-black/80 hover:text-gold transition-colors font-bold border-l border-black/10 pl-8">Exit [X]</button>
                 </div>
 
                 {/* Primary Sidebar Links (Syncing verbatim) */}
@@ -127,23 +127,23 @@ const Nav = () => {
                     </a>
                     <a href="#explore" onClick={closeMenu} className="group flex flex-col items-center no-underline menu-anim">
                         <span className="text-gold text-[0.4rem] font-black tracking-widest mb-1 opacity-30 group-hover:opacity-100 transition-all">06</span>
-                        <span className="text-4xl md:text-8xl font-light text-black group-hover:italic transition-all duration-700" style={{ fontFamily: 'Cormorant Garamond, serif' }}>Explore</span>
+                        <span className="text-4xl md:text-8xl font-light text-black group-hover:italic transition-all duration-700" style={{ fontFamily: 'Cormorant Garamond, serif' }}>Help & FAQ</span>
                     </a>
                 </div>
 
                 <div className="p-12 md:px-24 md:py-12 bg-black/[0.03] grid grid-cols-1 md:grid-cols-3 gap-12 items-center relative z-10">
                     <div className="space-y-4 menu-anim text-center md:text-left">
-                        <span className="text-[0.45rem] uppercase tracking-widest text-gold font-black block">Direct Line</span>
+                        <span className="text-xs text-gold font-bold block">Direct Line</span>
                         <a href="tel:+447368428158" className="text-black text-base md:text-xl font-bold no-underline hover:text-gold transition-colors">07368 428 158</a>
                     </div>
                     <div className="flex justify-center gap-12 menu-anim">
-                        <a href="#" className="text-black/20 hover:text-gold transition-all no-underline text-[0.55rem] uppercase font-bold tracking-widest">Instagram</a>
-                        <a href="#" className="text-black/20 hover:text-gold transition-all no-underline text-[0.55rem] uppercase font-bold tracking-widest">Twitter / X</a>
-                        <a href="#" className="text-black/20 hover:text-gold transition-all no-underline text-[0.55rem] uppercase font-bold tracking-widest">WhatsApp</a>
+                        <a href="#" className="text-black/60 hover:text-gold transition-all no-underline text-sm font-semibold">Instagram</a>
+                        <a href="#" className="text-black/60 hover:text-gold transition-all no-underline text-sm font-semibold">Twitter / X</a>
+                        <a href="#" className="text-black/60 hover:text-gold transition-all no-underline text-sm font-semibold">WhatsApp</a>
                     </div>
                     <div className="space-y-2 menu-anim text-center md:text-right">
-                        <span className="text-[0.45rem] uppercase tracking-widest text-black/20 font-black block">Sheffield HQ</span>
-                        <p className="text-gold/60 text-[0.55rem] font-bold tracking-widest uppercase">Verified Service / 24-7</p>
+                        <span className="text-xs text-black/60 font-bold block">Sheffield HQ</span>
+                        <p className="text-gold text-sm font-bold">Verified Service / 24-7</p>
                     </div>
                 </div>
 

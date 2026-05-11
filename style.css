@@ -24,7 +24,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none !important;
 }
 
 body {
@@ -62,28 +61,7 @@ body::after {
   100% { transform: translate(5%,0) }
 }
 
-/* CUSTOM CURSOR */
-#cursor {
-  width: 10px;
-  height: 10px;
-  background: var(--gold);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 10000;
-  mix-blend-mode: difference;
-}
-
-#cursor-follower {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 10000;
-  transition: width 0.3s, height 0.3s, background 0.3s;
-}
+/* CONTAINERS */
 
 /* CONTAINERS */
 .container-wide {
@@ -107,9 +85,7 @@ body::after {
 /* TYPOGRAPHY */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .reveal-text {
@@ -139,9 +115,7 @@ h1, h2, h3, h4, h5, h6 {
   background: transparent;
   color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.65rem;
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   position: relative;
@@ -203,11 +177,9 @@ h1, h2, h3, h4, h5, h6 {
 .nav-item {
   color: var(--ivory);
   text-decoration: none;
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
-  font-weight: 800;
-  opacity: 0.3;
+  font-size: 1rem;
+  font-weight: 700;
+  opacity: 0.6;
   transition: var(--transition-fast);
 }
 

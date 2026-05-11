@@ -7,8 +7,8 @@ const Partners = () => {
                 <div className="flex flex-col items-center justify-center space-y-8 anim-section-reveal">
                     {/* Section Header */}
                     <div className="text-center space-y-2">
-                        <span className="text-gold uppercase tracking-[0.5em] font-bold text-[0.5rem] block">Affiliates</span>
-                        <h2 className="text-2xl md:text-4xl font-bold uppercase tracking-tighter text-black">Strategic Partners</h2>
+                        <span className="text-gold font-bold text-base block">Network</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-black italic">Our Partners</h2>
                     </div>
 
                     {/* Partner Banner Container */}
@@ -27,8 +27,8 @@ const Partners = () => {
                     </div>
 
                     {/* Partner Verification Tag */}
-                    <div className="pt-4 opacity-20">
-                        <span className="text-[0.45rem] uppercase tracking-[0.6em] font-bold text-black">Verified Exchange Partner</span>
+                    <div className="pt-4 opacity-40">
+                        <span className="text-sm font-bold text-black">Verified Exchange Partner</span>
                     </div>
                 </div>
             </div>
