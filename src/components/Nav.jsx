@@ -37,20 +37,20 @@ const Nav = () => {
             <div className="hidden lg:flex items-center gap-10">
                 <a href="/" className={`text-base font-bold transition-colors no-underline border-b border-gold/40 pb-1 ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}>Home</a>
                 
-                {/* Our Girls Dropdown */}
+                {/* Available Companions Dropdown */}
                 <div className="relative group">
                     <button 
                         onMouseEnter={() => setActiveDropdown('girls')}
                         className={`flex items-center gap-2 text-base font-bold transition-colors ${scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'}`}
                     >
-                        Our Girls <svg width="6" height="6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6"/></svg>
+                        Available Companions <svg width="6" height="6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
                     <div 
                         onMouseLeave={() => setActiveDropdown(null)}
                         className={`absolute top-full left-0 mt-4 w-56 bg-ivory shadow-2xl transition-all duration-500 border border-black/5 ${activeDropdown === 'girls' ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4'}`}
                     >
                         <div className="flex flex-col">
-                            {['All Girls', 'Sheffield Girls', 'Leeds Girls', 'Nottingham Girls', 'Doncaster Girls', 'Barnsley Girls', 'Rotherham Girls', 'Chesterfield Girls'].map((item) => (
+                            {['All Companions', 'Sheffield', 'Leeds', 'Nottingham', 'Doncaster', 'Barnsley', 'Rotherham', 'Chesterfield'].map((item) => (
                                 <a key={item} href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="px-6 py-4 text-sm font-semibold text-black/70 hover:text-gold hover:bg-black/[0.02] border-b border-black/5 transition-all no-underline">
                                     {item}
                                 </a>
@@ -111,7 +111,7 @@ const Nav = () => {
                     </a>
                     <a href="#profiles" onClick={closeMenu} className="group flex flex-col items-center no-underline menu-anim">
                         <span className="text-gold text-[0.4rem] font-black tracking-widest mb-1 opacity-30 group-hover:opacity-100 transition-all">02</span>
-                        <span className="text-4xl md:text-8xl font-light text-black group-hover:italic transition-all duration-700" style={{ fontFamily: 'Cormorant Garamond, serif' }}>Our Girls</span>
+                        <span className="text-4xl md:text-8xl font-light text-black group-hover:italic transition-all duration-700" style={{ fontFamily: 'Cormorant Garamond, serif' }}>Available Companions</span>
                     </a>
                     <a href="/blogs" onClick={closeMenu} className="group flex flex-col items-center no-underline menu-anim">
                         <span className="text-gold text-[0.4rem] font-black tracking-widest mb-1 opacity-30 group-hover:opacity-100 transition-all">03</span>

@@ -7,49 +7,49 @@ const Locations = () => {
         { 
             city: 'Sheffield', 
             area: 'South Yorkshire (Our Base)', 
-            desc: 'Our main office is in Sheffield. We provide fast outcall service for the city and surrounding areas.',
+            desc: 'Our primary hub for elite companionship. We provide rapid outcall service across the city and surrounding premium districts.',
             img: '/images/pexels-noirgenesis-5953288.jpg',
-            stats: ['24/7 Service', 'Fast Arrival', 'Trusted Agency']
+            stats: ['24/7 Availability', 'Fast Response', 'Discreet Service']
         },
         { 
             city: 'Leeds', 
             area: 'West Yorkshire', 
-            desc: 'We offer elite outcall services in Leeds. We visit all major hotels and private homes with full discretion.',
+            desc: 'Premium outcall services in Leeds city center and residential areas. Discreet visits to all major luxury hotels and private residences.',
             img: '/images/pexels-yulianaphoto-10110684.jpg',
-            stats: ['Hotel Visits', 'Discreet Service', 'Leeds Hub']
-        },
-        { 
-            city: 'Nottingham', 
-            area: 'East Midlands', 
-            desc: 'We provide beautiful companions across Nottingham. We cover the city center and all nearby areas.',
-            img: '/images/pexels-vika-glitter-392079-11363751.jpg',
-            stats: ['East Midlands', 'Safe Travel', 'Always On Time']
-        },
-        { 
-            city: 'Manchester', 
-            area: 'Greater Manchester', 
-            desc: 'A premium service in Manchester city center. Our girls provide elite visits across the Manchester region.',
-            img: '/images/pexels-vika-glitter-392079-8780221.jpg',
-            stats: ['City Center', 'VIP Service', 'Luxury Travel']
+            stats: ['Hotel Visits', 'Professional Protocol', 'Leeds Hub']
         },
         { 
             city: 'Doncaster', 
             area: 'South Yorkshire', 
-            desc: 'Serving Doncaster and surrounding districts with elite companionship. Fast response for all local inquiries.',
+            desc: 'Serving Doncaster and surrounding districts with elite companionship. Fast response for all local inquiries and hotel bookings.',
             img: '/images/pexels-macnalodao-20270579.jpg',
-            stats: ['Fast Response', 'Discreet Hub', 'Local Service']
+            stats: ['Rapid Dispatch', 'Private Support', 'Local Expertise']
+        },
+        { 
+            city: 'Rotherham', 
+            area: 'South Yorkshire', 
+            desc: 'Exclusive companionship services throughout Rotherham. Our vetted professionals are available for both social and private engagements.',
+            img: '/images/pexels-vika-glitter-392079-8780224.jpg',
+            stats: ['South Yorkshire', 'Social Dates', 'Verified Profiles']
         },
         { 
             city: 'Barnsley', 
             area: 'South Yorkshire', 
-            desc: 'Elite outcall services provided throughout Barnsley. Our girls are available for social and personal dates.',
+            desc: 'Elite outcall services provided throughout Barnsley and the Dearne Valley. Exceptional companions available at short notice.',
             img: '/images/pexels-vika-glitter-392079-13066145.jpg',
-            stats: ['South Yorkshire', 'Social Dates', 'Verified Profiles']
+            stats: ['Dearne Valley', 'Verified Beauty', 'Discreet Hub']
+        },
+        { 
+            city: 'Wakefield', 
+            area: 'West Yorkshire', 
+            desc: 'Serving Wakefield and the Five Towns. Professional and discreet companionship for the discerning client.',
+            img: '/images/pexels-vika-glitter-392079-8780221.jpg',
+            stats: ['West Yorkshire', 'Private Visits', 'Fast Arrival']
         }
     ];
 
     const surroundings = [
-        'Chesterfield', 'Rotherham', 'Worksop', 'Wakefield', 'Bradford', 'Huddersfield'
+        'Chesterfield', 'Worksop', 'Bradford', 'Huddersfield', 'Haltemprice', 'Scunthorpe'
     ];
 
     return (

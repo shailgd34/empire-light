@@ -6,10 +6,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TrustSignals = () => {
     const signals = [
-        { label: 'Real Girls', value: '100%', sub: 'All Photos are Authentic' },
+        { label: 'Verified Profiles', value: '100%', sub: 'Authentic Photography Guaranteed' },
         { label: 'Available', value: '24/7', sub: 'Call or WhatsApp Anytime' },
-        { label: 'ID Checked', value: 'Verified', sub: 'Every Girl is Checked' },
-        { label: 'Locations', value: 'Local', sub: 'Sheffield, Leeds & More' }
+        { label: 'Private Support', value: 'Discreet', sub: 'Confidential Service Protocol' },
+        { label: 'Local Agency', value: 'Trusted', sub: 'South Yorkshire & West Yorkshire' }
     ];
 
     useEffect(() => {

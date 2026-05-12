@@ -34,10 +34,10 @@ const JoinBanner = () => {
                                 <div className="w-8 h-px bg-gold/30"></div>
                             </div>
                             <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                                Become An <span className="italic text-gold">Empire</span> Girl
+                                Join Our <span className="italic text-gold">Elite</span> Portfolio
                             </h2>
                             <p className="text-white/60 text-base md:text-lg font-medium leading-relaxed">
-                                We are always looking for beautiful, charming, and reliable girls to join our agency. We offer the best rates, flexible hours, and a professional environment.
+                                We are always seeking sophisticated, professional, and reliable companions to join our premier agency. Experience a refined management style with the best rates and absolute discretion.
                             </p>
                         </div>
 

@@ -74,20 +74,19 @@ const App = () => {
             <Nav />
             <main>
                 <Hero />
-                <ValueProp />
                 <Selection />
                 <OurEthos />
-                <Locations />
+                <ValueProp />
                 <Services />
-                <TrustSignals />
+                <Contact />
+                <Locations />
                 <Protocol />
+                <TrustSignals />
                 <Testimonials />
                 <FAQs />
                 <JoinBanner />
-                <Contact />
                 <SEOContent />
             </main>
-            <Partners />
             <Footer />
             <StickyCTA />
         </div>

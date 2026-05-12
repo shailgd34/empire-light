@@ -76,7 +76,7 @@ const Contact = () => {
                                 </div>
                                 <div className="pt-4">
                                     <button className="group relative w-full overflow-hidden bg-black text-white py-5 text-xs font-bold tracking-widest uppercase transition-all duration-700">
-                                        <span className="relative z-10">Send Secure Message</span>
+                                        <span className="relative z-10">Request Private Support</span>
                                         <div className="absolute inset-0 bg-gold translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
                                     </button>
                                 </div>

@@ -2,43 +2,87 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-bg-primary pt-16 pb-32 border-t border-black/5" id="footer">
+        <footer className="bg-black text-white pt-24 pb-12 border-t border-white/5" id="footer">
             <div className="container-wide">
-                <div className="flex flex-col items-center text-center space-y-12">
-                    {/* Primary Branding */}
-                    <div className="space-y-6 anim-section-reveal">
-                        <img src="/images/logo.webp" alt="Empire Escorts" className="h-12 md:h-16 w-auto mx-auto" />
-                        <p className="text-black/60 text-sm font-bold max-w-sm mx-auto">
-                            Real Girls, Real Profiles. Sheffield Based.
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-12 mb-20">
+                    
+                    {/* Brand Column */}
+                    <div className="space-y-8">
+                        <img src="/images/logo.webp" alt="Empire" className="h-10 w-auto brightness-0 invert" />
+                        <p className="text-white/40 text-sm font-medium leading-relaxed max-w-xs">
+                            The premier destination for distinguished companionship across South Yorkshire and beyond. Absolute discretion guaranteed.
                         </p>
+                        <div className="flex gap-6">
+                            {['Instagram', 'Twitter', 'WhatsApp'].map(social => (
+                                <a key={social} href="#" className="text-white/30 hover:text-gold transition-colors text-xs font-bold uppercase tracking-widest no-underline">{social}</a>
+                            ))}
+                        </div>
                     </div>
 
-                    {/* Navigation Links (Sync Verbatim) */}
-                    <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 anim-section-reveal">
-                        <a href="/" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Home</a>
-                        <a href="#profiles" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Our Girls</a>
-                        <a href="/blogs" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Blogs</a>
-                        <a href="/contact" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Contact Us</a>
-                        <a href="/join" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Join Us</a>
-                        <a href="#explore" className="text-base font-bold text-black hover:text-gold transition-colors no-underline">Help & FAQ</a>
+                    {/* Navigation Column */}
+                    <div className="space-y-8">
+                        <h4 className="text-gold text-[0.6rem] font-bold uppercase tracking-[0.3em]">Quick Navigation</h4>
+                        <ul className="space-y-4 list-none p-0">
+                            {[
+                                { name: 'Home', link: '/' },
+                                { name: 'Available Companions', link: '#profiles' },
+                                { name: 'The Empire Standard', link: '#about' },
+                                { name: 'Booking Protocol', link: '#protocol' },
+                                { name: 'Help & FAQ', link: '#faq' }
+                            ].map(item => (
+                                <li key={item.name}>
+                                    <a href={item.link} className="text-white/60 hover:text-white transition-all text-sm font-bold no-underline flex items-center gap-2 group">
+                                        <div className="w-0 h-px bg-gold group-hover:w-4 transition-all duration-500"></div>
+                                        {item.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
-                    {/* Legal & Copyright */}
-                    <div className="w-full pt-12 border-t border-black/5 space-y-8 anim-section-reveal">
-                        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                            <p className="text-sm text-black/60 font-bold mb-4">
-                            © 2026 Empire Escorts. All Rights Reserved. Northern Excellence.
-                        </p>
-                        <div className="flex justify-center gap-8">
-                            <a href="/terms" className="text-xs text-black/40 hover:text-black transition-colors no-underline">Terms of Service</a>
-                            <a href="/privacy" className="text-xs text-black/40 hover:text-black transition-colors no-underline">Privacy Policy</a>
+                    {/* Hubs Column */}
+                    <div className="space-y-8">
+                        <h4 className="text-gold text-[0.6rem] font-bold uppercase tracking-[0.3em]">Elite Hubs</h4>
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-4">
+                            {[
+                                'Sheffield', 'Leeds', 'Nottingham', 'Doncaster',
+                                'Rotherham', 'Barnsley', 'Chesterfield', 'Wakefield'
+                            ].map(city => (
+                                <span key={city} className="text-white/40 text-xs font-bold hover:text-white transition-colors cursor-default">{city}</span>
+                            ))}
                         </div>
-                        </div>
+                    </div>
 
-                        {/* Agency Watermark */}
-                        <div className="opacity-[0.02] pointer-events-none select-none">
-                            <span className="text-[12vw] font-bold uppercase text-black leading-none tracking-tighter">Empire</span>
+                    {/* Support Column */}
+                    <div className="space-y-8">
+                        <h4 className="text-gold text-[0.6rem] font-bold uppercase tracking-[0.3em]">Private Concierge</h4>
+                        <div className="space-y-6">
+                            <div className="space-y-1">
+                                <span className="text-white/30 text-[0.6rem] font-bold uppercase">Direct Inquiry</span>
+                                <a href="tel:+447368428158" className="text-white text-lg font-bold block no-underline hover:text-gold transition-colors">07368 428 158</a>
+                            </div>
+                            <div className="space-y-1">
+                                <span className="text-white/30 text-[0.6rem] font-bold uppercase">Operating Hours</span>
+                                <p className="text-gold text-xs font-bold">24 Hours / 7 Days a Week</p>
+                            </div>
                         </div>
+                    </div>
+                </div>
+
+                {/* Bottom Bar */}
+                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div className="flex flex-col md:flex-row items-center gap-8">
+                        <p className="text-white/20 text-[0.6rem] font-bold uppercase tracking-widest">
+                            © 2026 Empire Escorts. All Rights Reserved.
+                        </p>
+                        <div className="flex gap-6">
+                            <a href="/terms" className="text-white/20 hover:text-white transition-colors text-[0.6rem] font-bold uppercase no-underline">Terms</a>
+                            <a href="/privacy" className="text-white/20 hover:text-white transition-colors text-[0.6rem] font-bold uppercase no-underline">Privacy</a>
+                        </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-4 text-white/10">
+                        <span className="text-[0.6rem] font-bold uppercase tracking-[0.4em]">Southern Excellence</span>
                     </div>
                 </div>
             </div>

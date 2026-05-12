@@ -41,35 +41,35 @@ const ValueProp = () => {
                     {/* Right Side: Simple Typography */}
                     <div className="space-y-12 anim-section-reveal">
                         <div className="space-y-6">
-                            <span className="text-gold font-bold text-base block tracking-widest uppercase">About Our Agency</span>
+                            <span className="text-gold font-bold text-base block tracking-widest uppercase">The Empire Standard</span>
                             <h2 className="text-4xl md:text-6xl font-bold leading-tight text-black">
-                                About Our <span className="italic text-transparent" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>Agency</span>
+                                Elite <span className="italic text-transparent" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>Companionship</span>
                             </h2>
                         </div>
                         
                         <div className="space-y-8">
                             <p className="text-black/80 text-xl md:text-2xl font-bold leading-relaxed italic border-l-4 border-gold pl-10">
-                                Welcome to Empire Escorts. We are a top agency in Sheffield. We make it easy to find beautiful girls and book them with no stress.
+                                South Yorkshire’s premier agency for discerning clients seeking sophisticated companionship and absolute discretion.
                             </p>
                             <p className="text-black/60 text-lg font-medium leading-relaxed max-w-xl">
-                                We help you see local profiles and choose the best one. All our girls are checked and their photos are 100% real. You can trust us for a great experience.
+                                At Empire, we redefine the standard of outcall service. Our curated portfolio features elite companions who are as intelligent and charismatic as they are beautiful. With a focus on authenticity and professionalism, we ensure every engagement is seamless, private, and unforgettable.
                             </p>
                         </div>
 
                         <div className="grid grid-cols-2 gap-12 pt-10 border-t border-black/10">
                             <div className="space-y-3">
-                                <h4 className="text-black font-bold text-lg">Sheffield Based</h4>
-                                <p className="text-black/40 text-sm font-medium">We are based in Sheffield and cover all of the North.</p>
+                                <h4 className="text-black font-bold text-lg">South Yorkshire Hub</h4>
+                                <p className="text-black/40 text-sm font-medium">Strategically based in Sheffield to serve the entire Northern region with speed and elegance.</p>
                             </div>
                             <div className="space-y-3">
-                                <h4 className="text-black font-bold text-lg">Safe & Private</h4>
-                                <p className="text-black/40 text-sm font-medium">We keep your booking secret and private at all times.</p>
+                                <h4 className="text-black font-bold text-lg">Book With Confidence</h4>
+                                <p className="text-black/40 text-sm font-medium">All profiles are 100% verified. We prioritize your privacy and peace of mind above all else.</p>
                             </div>
                         </div>
 
                         <div className="pt-8">
                             <a href="#profiles" className="inline-block py-6 px-12 bg-black text-white text-base font-bold hover:bg-gold hover:text-black transition-all duration-500 shadow-2xl no-underline">
-                                See Our Girls
+                                Available Companions
                             </a>
                         </div>
                     </div>

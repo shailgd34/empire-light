@@ -6,15 +6,15 @@ const FAQs = () => {
     const faqs = [
         {
             q: "How do I make a booking?",
-            a: "Making a booking is simple. Browse our gallery of verified girls, choose your favorite, and then call, text, or WhatsApp our concierge team. We will confirm availability and travel time immediately."
+            a: "Making a booking is seamless. Browse our gallery of verified companions, choose your favorite, and then contact our private support via Call or WhatsApp. We will confirm availability and travel times immediately."
         },
         {
             q: "What areas do you cover?",
             a: "We are based in Sheffield and provide elite outcall services across the entire Northern Hub, including Leeds, Nottingham, Manchester, Doncaster, Barnsley, and all surrounding districts."
         },
         {
-            q: "How long does it take for a girl to arrive?",
-            a: "For local Sheffield appointments, we aim to have your chosen companion with you in under an hour. For other cities, arrival times usually range from 45 to 90 minutes depending on traffic and location."
+            q: "How long does it take for a companion to arrive?",
+            a: "For local Sheffield appointments, we aim to have your chosen companion with you in under an hour. For other cities, arrival times usually range from 45 to 90 minutes depending on your specific location."
         },
         {
             q: "Is my privacy guaranteed?",
@@ -22,7 +22,7 @@ const FAQs = () => {
         },
         {
             q: "Are the photos on the site real?",
-            a: "Yes, 100%. All our profiles feature authentic, verified photography. We personally interview every girl to ensure they represent a true likeness of their online profile."
+            a: "Yes, 100%. All our profiles feature authentic, verified photography. We personally interview every companion to ensure they represent a true likeness of their digital profile."
         }
     ];
 

@@ -2,9 +2,9 @@ import React from 'react';
 
 const SEOContent = () => {
     const keyPoints = [
-        { title: 'Absolute Discretion', desc: 'We never share your personal details. All bookings are strictly private and confidential.' },
-        { title: 'Under 1 Hour Arrival', desc: 'For local Sheffield bookings, we aim to have your chosen girl with you in less than 60 minutes.' },
-        { title: '100% Real Pictures', desc: 'Every photo is verified. The girl you see on our website is the girl you will meet.' }
+        { title: 'Absolute Discretion', desc: 'We prioritize your privacy above all. All bookings are strictly private, confidential, and discreet.' },
+        { title: 'Under 1 Hour Arrival', desc: 'For local Sheffield appointments, we aim to have your chosen companion with you in less than 60 minutes.' },
+        { title: 'Verified Photography', desc: 'Every photo is authenticated. The companion you select on our website is the individual you will meet.' }
     ];
 
     return (
@@ -20,7 +20,7 @@ const SEOContent = () => {
                                 <span className="text-gold font-bold text-xs tracking-[0.3em] uppercase block">Reliable Sheffield Agency</span>
                             </div>
                             <h2 className="text-4xl md:text-6xl font-bold text-black leading-tight">
-                                Hire Escorts in Sheffield with an Agency <span className="italic text-transparent" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>You Can Rely On</span>
+                                Elite Outcall Service in Sheffield with an Agency <span className="italic text-transparent" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>You Can Trust</span>
                             </h2>
                         </div>
                         <div className="lg:col-span-4 flex lg:justify-end">
