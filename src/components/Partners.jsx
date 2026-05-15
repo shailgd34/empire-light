@@ -16,11 +16,11 @@ const Partners = () => {
                         {/* Decorative Corners */}
                         <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-gold/40 group-hover:w-full group-hover:h-full transition-all duration-1000 pointer-events-none"></div>
                         <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-gold/40 group-hover:w-full group-hover:h-full transition-all duration-1000 pointer-events-none"></div>
-                        
+
                         <a href="https://seductiveseekers.com" target="_blank" rel="noopener noreferrer" className="block relative z-10">
-                            <img 
-                                src="/images/seductive-seekers-exchange-link-banner-1024x256.webp" 
-                                alt="Seductive Seekers Partner" 
+                            <img
+                                src="/images/seductive-seekers-exchange-link-banner-1024x256.webp"
+                                alt="Seductive Seekers Partner"
                                 className="w-full h-auto grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 shadow-2xl"
                             />
                         </a>

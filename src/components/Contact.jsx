@@ -2,89 +2,133 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <section id="contact" className="bg-bg-primary py-16 md:py-24 relative overflow-hidden">
-            {/* Background Texture */}
-            <div className="absolute inset-0 opacity-[0.02] pointer-events-none select-none">
-                <span className="text-[25vw] font-bold text-black absolute -bottom-10 -right-10 leading-none rotate-6">Secure</span>
-            </div>
-
-            <div className="container-wide relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-                    
-                    {/* Left: Direct Contact */}
-                    <div className="space-y-12 anim-section-reveal">
-                        <div className="space-y-4">
-                            <div className="flex items-center gap-4">
-                                <div className="w-8 h-px bg-gold/30"></div>
-                                <span className="text-gold font-bold text-xs tracking-[0.3em] uppercase">Contact Our Concierge</span>
-                            </div>
-                            <h2 className="text-4xl md:text-6xl font-bold leading-tight text-black">
-                                Book Your <span className="text-transparent italic" style={{ WebkitTextStroke: '1.5px rgba(0,0,0,0.25)' }}>Companion.</span>
+        <section id="contact" className="section" style={{ background: '#fff', padding: '80px 0' }}>
+            <div className="container">
+                <div className="contact-grid">
+                    <div className="contact-info anim-reveal">
+                        <div className="section-header" style={{ textAlign: 'left', marginBottom: '40px' }}>
+                            <p style={{ color: 'var(--accent)', fontSize: '12px', fontWeight: '900', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Get In Touch</p>
+                            <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: '800', color: '#111', textTransform: 'uppercase' }}>
+                                Book Your <span style={{ color: 'var(--accent)' }}>Experience</span>
                             </h2>
                         </div>
 
-                        <div className="space-y-10">
-                            <div className="space-y-4">
-                                <p className="text-black/80 text-lg md:text-xl font-bold italic leading-relaxed border-l-4 border-gold pl-8">
-                                    Our team is available 24 hours a day, 7 days a week. We pride ourselves on 100% discretion and privacy.
-                                </p>
-                            </div>
+                        <p className="contact-intro">
+                            Our dedicated concierge team is available 24/7 to assist with your bookings. We guarantee 100% discretion and a professional service at all times.
+                        </p>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-6 border-t border-black/10">
-                                <div className="space-y-3">
-                                    <span className="text-gold text-[0.6rem] font-bold uppercase tracking-widest">Call or Text</span>
-                                    <a href="tel:+447368428158" className="text-xl md:text-2xl text-black font-bold hover:text-gold transition-all duration-500 no-underline block tracking-tight">07368 428 158</a>
-                                </div>
-                                <div className="space-y-3">
-                                    <span className="text-gold text-[0.6rem] font-bold uppercase tracking-widest">WhatsApp</span>
-                                    <a href="https://wa.me/447368428158" className="text-xl md:text-2xl text-black font-bold hover:text-gold transition-all duration-500 no-underline block tracking-tight">Secure Message</a>
-                                </div>
+                        <div className="contact-methods">
+                            <div className="method-item">
+                                <span className="method-label">Direct Line</span>
+                                <a href="tel:07368428158" className="method-link">07368 428 158</a>
                             </div>
-                        </div>
-
-                        <div className="flex items-center gap-3 text-black/30">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <span className="text-[0.6rem] font-bold uppercase tracking-widest">End-to-End Encrypted Inquiry</span>
+                            <div className="method-item">
+                                <span className="method-label">WhatsApp</span>
+                                <a href="https://wa.me/447368428158" className="method-link">Message Concierge</a>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Right: Premium Form */}
-                    <div className="bg-bg-secondary p-10 md:p-14 shadow-2xl border border-black/5 relative overflow-hidden group anim-section-reveal">
-                        {/* Decorative Gradient */}
-                        <div className="absolute top-0 right-0 w-24 h-24 bg-gold/5 blur-3xl rounded-full"></div>
-                        
-                        <div className="relative z-10 space-y-10">
-                            <div className="space-y-3">
-                                <h3 className="text-2xl font-bold text-black italic">Booking Inquiry</h3>
-                                <p className="text-black/50 text-xs font-medium uppercase tracking-wider">Please fill in your details below.</p>
+                    <div className="contact-form-wrap anim-reveal">
+                        <form className="premium-form">
+                            <div className="form-group">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="Your name" />
                             </div>
-
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <label className="text-[0.6rem] font-bold text-black/40 uppercase tracking-widest">Your Name</label>
-                                        <input type="text" className="w-full bg-black/5 border-b border-black/10 py-3 text-black text-base focus:outline-none focus:border-gold transition-all bg-transparent" placeholder="Full Name" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-[0.6rem] font-bold text-black/40 uppercase tracking-widest">Contact Info</label>
-                                        <input type="text" className="w-full bg-black/5 border-b border-black/10 py-3 text-black text-base focus:outline-none focus:border-gold transition-all bg-transparent" placeholder="Phone or Email" />
-                                    </div>
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-[0.6rem] font-bold text-black/40 uppercase tracking-widest">Preferred Companion & Location</label>
-                                    <textarea className="w-full bg-black/5 border-b border-black/10 py-3 text-black text-base focus:outline-none focus:border-gold transition-all bg-transparent h-24 resize-none" placeholder="Who, where, and at what time?"></textarea>
-                                </div>
-                                <div className="pt-4">
-                                    <button className="group relative w-full overflow-hidden bg-black text-white py-5 text-xs font-bold tracking-widest uppercase transition-all duration-700">
-                                        <span className="relative z-10">Request Private Support</span>
-                                        <div className="absolute inset-0 bg-gold translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                            <div className="form-group">
+                                <label>Contact Number</label>
+                                <input type="text" placeholder="Phone or WhatsApp" />
+                            </div>
+                            <div className="form-group">
+                                <label>Message / Requirements</label>
+                                <textarea placeholder="Who would you like to see and when?"></textarea>
+                            </div>
+                            <button type="submit" className="btn btn-primary w-full">SEND SECURE REQUEST</button>
+                        </form>
                     </div>
                 </div>
             </div>
+
+            <style jsx>{`
+                .contact-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 80px;
+                    align-items: center;
+                }
+                .contact-intro {
+                    font-size: 16px;
+                    color: #555;
+                    line-height: 1.8;
+                    margin-bottom: 40px;
+                    font-weight: 500;
+                    border-left: 3px solid var(--accent);
+                    padding-left: 25px;
+                }
+                .contact-methods {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 30px;
+                }
+                .method-label {
+                    display: block;
+                    font-size: 10px;
+                    font-weight: 900;
+                    color: var(--accent);
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    margin-bottom: 10px;
+                }
+                .method-link {
+                    font-size: 1.2rem;
+                    font-weight: 800;
+                    color: #111;
+                    text-decoration: none;
+                    transition: 0.3s;
+                }
+                .method-link:hover {
+                    color: var(--accent);
+                }
+                .premium-form {
+                    background: var(--bg-secondary);
+                    padding: 50px;
+                    border-radius: 4px;
+                    border: 1px solid #eee;
+                }
+                .form-group {
+                    margin-bottom: 25px;
+                }
+                .form-group label {
+                    display: block;
+                    font-size: 10px;
+                    font-weight: 900;
+                    color: #888;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    margin-bottom: 10px;
+                }
+                .form-group input, .form-group textarea {
+                    width: 100%;
+                    background: #fff;
+                    border: 1px solid #eee;
+                    padding: 15px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    outline: none;
+                    transition: 0.3s;
+                }
+                .form-group input:focus, .form-group textarea:focus {
+                    border-color: var(--accent);
+                }
+                .form-group textarea {
+                    height: 100px;
+                    resize: none;
+                }
+                @media (max-width: 1024px) {
+                    .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+                    .premium-form { padding: 40px 30px; }
+                }
+            `}</style>
         </section>
     );
 };

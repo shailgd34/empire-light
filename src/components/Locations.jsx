@@ -1,147 +1,99 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+const areas = [
+    'Sheffield', 'Rotherham', 'Barnsley', 'Doncaster',
+    'Leeds', 'Bradford', 'Wakefield', 'Chesterfield', 'Worksop'
+];
 
 const Locations = () => {
-    const [activeLoc, setActiveLoc] = useState(0);
-
-    const locations = [
-        { 
-            city: 'Sheffield', 
-            area: 'South Yorkshire (Our Base)', 
-            desc: 'Our primary hub for elite companionship. We provide rapid outcall service across the city and surrounding premium districts.',
-            img: '/images/pexels-noirgenesis-5953288.jpg',
-            stats: ['24/7 Availability', 'Fast Response', 'Discreet Service']
-        },
-        { 
-            city: 'Leeds', 
-            area: 'West Yorkshire', 
-            desc: 'Premium outcall services in Leeds city center and residential areas. Discreet visits to all major luxury hotels and private residences.',
-            img: '/images/pexels-yulianaphoto-10110684.jpg',
-            stats: ['Hotel Visits', 'Professional Protocol', 'Leeds Hub']
-        },
-        { 
-            city: 'Doncaster', 
-            area: 'South Yorkshire', 
-            desc: 'Serving Doncaster and surrounding districts with elite companionship. Fast response for all local inquiries and hotel bookings.',
-            img: '/images/pexels-macnalodao-20270579.jpg',
-            stats: ['Rapid Dispatch', 'Private Support', 'Local Expertise']
-        },
-        { 
-            city: 'Rotherham', 
-            area: 'South Yorkshire', 
-            desc: 'Exclusive companionship services throughout Rotherham. Our vetted professionals are available for both social and private engagements.',
-            img: '/images/pexels-vika-glitter-392079-8780224.jpg',
-            stats: ['South Yorkshire', 'Social Dates', 'Verified Profiles']
-        },
-        { 
-            city: 'Barnsley', 
-            area: 'South Yorkshire', 
-            desc: 'Elite outcall services provided throughout Barnsley and the Dearne Valley. Exceptional companions available at short notice.',
-            img: '/images/pexels-vika-glitter-392079-13066145.jpg',
-            stats: ['Dearne Valley', 'Verified Beauty', 'Discreet Hub']
-        },
-        { 
-            city: 'Wakefield', 
-            area: 'West Yorkshire', 
-            desc: 'Serving Wakefield and the Five Towns. Professional and discreet companionship for the discerning client.',
-            img: '/images/pexels-vika-glitter-392079-8780221.jpg',
-            stats: ['West Yorkshire', 'Private Visits', 'Fast Arrival']
-        }
-    ];
-
-    const surroundings = [
-        'Chesterfield', 'Worksop', 'Bradford', 'Huddersfield', 'Haltemprice', 'Scunthorpe'
-    ];
-
     return (
-        <section className="bg-bg-primary py-16 md:py-24 relative overflow-hidden" id="locations">
-            {/* Background Texture */}
-            <div className="absolute inset-0 opacity-[0.02] pointer-events-none select-none">
-                <div className="absolute top-0 right-0 w-1/2 h-full border-l border-black/10"></div>
-                <span className="text-[30vw] font-bold text-black absolute -bottom-10 -left-10 leading-none">Map</span>
-            </div>
-
-            <div className="container-wide relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-                    
-                    {/* Left: City List */}
-                    <div className="lg:col-span-6 space-y-10 anim-section-reveal">
-                        <div className="space-y-4">
-                            <div className="flex items-center gap-4">
-                                <div className="w-8 h-px bg-gold/30"></div>
-                                <span className="text-gold font-bold text-xs tracking-[0.3em] uppercase">Where We Cover</span>
-                            </div>
-                            <h2 className="text-4xl md:text-6xl font-bold leading-tight text-black">
-                                Major <span className="italic text-transparent" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>Hubs</span>
-                            </h2>
-                        </div>
-
-                        <div className="flex flex-col">
-                            {locations.map((loc, idx) => (
-                                <button 
-                                    key={idx}
-                                    onMouseEnter={() => setActiveLoc(idx)}
-                                    className="group flex items-center justify-between py-5 border-b border-black/5 text-left transition-all duration-500"
-                                >
-                                    <div className="flex items-baseline gap-6">
-                                        <span className={`text-xs font-bold transition-colors duration-500 ${activeLoc === idx ? 'text-gold' : 'text-black/20'}`}>0{idx + 1}</span>
-                                        <span className={`text-2xl md:text-5xl font-bold transition-all duration-700 ${activeLoc === idx ? 'text-black translate-x-4 italic' : 'text-black/30 group-hover:text-black/60'}`}>
-                                            {loc.city}
-                                        </span>
-                                    </div>
-                                    <div className={`w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center transition-all duration-700 ${activeLoc === idx ? 'bg-gold border-gold text-white rotate-45 scale-110' : 'opacity-0'}`}>
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                    </div>
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Right: City Details Card */}
-                    <div className="lg:col-span-6 anim-section-reveal">
-                        <div className="bg-bg-secondary h-full relative overflow-hidden group shadow-2xl border border-black/5">
-                            <img 
-                                src={locations[activeLoc].img} 
-                                alt={locations[activeLoc].city} 
-                                className="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-[2000ms]" 
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                            
-                            <div className="absolute bottom-0 left-0 p-10 md:p-14 space-y-8 w-full">
-                                <div className="space-y-4">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-px bg-gold/50"></div>
-                                        <span className="text-gold font-bold text-xs uppercase tracking-widest">{locations[activeLoc].area}</span>
-                                    </div>
-                                    <h3 className="text-4xl md:text-5xl font-bold text-white italic">{locations[activeLoc].city}</h3>
-                                    <p className="text-white/60 text-base md:text-lg max-w-sm font-medium leading-relaxed">
-                                        {locations[activeLoc].desc}
-                                    </p>
-                                </div>
-
-                                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
-                                    {locations[activeLoc].stats.map((stat, sIdx) => (
-                                        <div key={sIdx} className="space-y-1">
-                                            <span className="text-gold font-bold text-[0.65rem] uppercase tracking-widest block">{stat}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <section id="locations" className="section" style={{ background: '#fff', padding: '80px 0' }}>
+            <div className="container">
+                <div className="section-header anim-reveal">
+                    <p style={{ color: 'var(--accent)', fontSize: '12px', fontWeight: '900', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Where We Are</p>
+                    <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: '800', color: '#111', textTransform: 'uppercase' }}>
+                        Pick Your <span style={{ color: 'var(--accent)' }}>Region</span>
+                    </h2>
                 </div>
 
-                {/* Bottom Bar: Other Areas */}
-                <div className="mt-16 pt-8 border-t border-black/5 flex flex-wrap items-center gap-x-12 gap-y-6 anim-section-reveal">
-                    <span className="text-xs font-bold text-black/30 uppercase tracking-[0.4em]">Surrounding Areas</span>
-                    <div className="flex flex-wrap gap-8">
-                        {surroundings.map((area) => (
-                            <span key={area} className="text-xs font-bold text-black/60 hover:text-gold cursor-default transition-colors uppercase tracking-widest">
-                                {area}
-                            </span>
-                        ))}
-                    </div>
+                <div className="regions-grid anim-reveal">
+                    {areas.map((area) => (
+                        <a key={area} href={`#${area.toLowerCase()}`} className="region-card">
+                            <span className="region-txt">{area} Models</span>
+                            <svg className="region-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    ))}
+                </div>
+
+                <div className="locations-footer anim-reveal">
+                    <p className="footer-label">Can't find your area? Call us 24/7</p>
+                    <a href="tel:07368428158" className="footer-num">07368 428 158</a>
                 </div>
             </div>
+
+            <style jsx>{`
+                .regions-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+                .region-card {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 20px 30px;
+                    background: var(--bg-secondary);
+                    text-decoration: none;
+                    transition: 0.4s var(--ease-expo);
+                    border: 1px solid #f0f0f0;
+                }
+                .region-card:hover {
+                    background: #fff;
+                    border-color: var(--accent);
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+                }
+                .region-txt {
+                    font-size: 13px;
+                    font-weight: 800;
+                    color: #111;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                }
+                .region-svg {
+                    color: var(--accent);
+                    transition: 0.3s;
+                }
+                .region-card:hover .region-svg {
+                    transform: translateX(5px);
+                }
+                .locations-footer {
+                    margin-top: 60px;
+                    text-align: center;
+                }
+                .footer-label {
+                    font-size: 10px;
+                    font-weight: 900;
+                    color: #999;
+                    text-transform: uppercase;
+                    letter-spacing: 0.2em;
+                    margin-bottom: 5px;
+                }
+                .footer-num {
+                    font-size: 1.8rem;
+                    font-weight: 800;
+                    color: #111;
+                    text-decoration: none;
+                    letter-spacing: -0.01em;
+                }
+                @media (max-width: 1024px) {
+                    .regions-grid { grid-template-columns: repeat(2, 1fr); }
+                }
+                @media (max-width: 640px) {
+                    .regions-grid { grid-template-columns: 1fr; }
+                    .footer-num { font-size: 1.5rem; }
+                }
+            `}</style>
         </section>
     );
 };

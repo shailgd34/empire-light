@@ -1,202 +1,327 @@
-import React, { useEffect, useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
-import gsap from 'gsap';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-fade';
+import React, { useState, useEffect } from 'react';
 
 const Hero = () => {
-    const swiperRef = useRef(null);
-
+    const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
         {
-            video: '/video/14973850-hd_1920_1080_24fps.mp4',
-            sub: 'Premium Sheffield Agency / Under New Management',
-            title: 'Elite',
-            title2: 'Companions',
-            desc: 'The premier destination for distinguished companionship in Sheffield and beyond. Now under new management with a refined commitment to excellence and discretion.'
+            image: '/images/pexels-valeriya-597203.jpg',
+            title: 'TOP ESCORT AGENCY',
+            subtitle: 'IN SHEFFIELD',
+            desc: 'We provide beautiful and professional girls in Sheffield. Our service is 100% private and real for all clients.'
         },
         {
-            video: '/video/grok-video-8c7d4c4b-ab3a-418c-a7a5-09b3da8847b5-1-1.mp4',
-            sub: 'Discreet Outcall Service / South Yorkshire',
-            title: 'Verified',
-            title2: 'Profiles',
-            desc: 'Serving Sheffield, Leeds, and the major hubs of the North. Every companion is meticulously vetted for sophistication, authenticity, and charisma.'
+            image: '/images/pexels-vika-glitter-392079-30219290.jpg',
+            title: 'BEAUTIFUL GIRLS',
+            subtitle: 'REAL & VERIFIED',
+            desc: 'All our girl photos are 100% real. We have the best collection of girls in South Yorkshire.'
+        },
+        {
+            image: '/images/pexels-vika-glitter-392079-11363751.jpg',
+            title: '24/7 PRIVATE',
+            subtitle: 'SERVICE FOR YOU',
+            desc: 'Booking is very easy and fast. Call or WhatsApp us anytime to book your favorite girl.'
         }
     ];
 
-    const animateSlide = (index) => {
-        const currentSlide = document.querySelectorAll('.hero-slide-item')[index];
-        if (!currentSlide) return;
-
-        // Reset
-        gsap.set(currentSlide.querySelectorAll('.char'), { y: 100, opacity: 0 });
-        gsap.set(currentSlide.querySelector('.hero-line'), { scaleX: 0 });
-
-        // Animate
-        gsap.to(currentSlide.querySelectorAll('.char'), {
-            y: 0,
-            opacity: 1,
-            duration: 1.2,
-            stagger: 0.03,
-            ease: "expo.out",
-            delay: 0.5
-        });
-
-        gsap.to(currentSlide.querySelector('.hero-line'), {
-            scaleX: 1,
-            duration: 1.5,
-            ease: "expo.inOut",
-            delay: 0.2
-        });
-
-        gsap.fromTo(currentSlide.querySelector('.hero-video-bg'), 
-            { scale: 1.1, filter: 'blur(10px)' },
-            { scale: 1, filter: 'blur(0px)', duration: 2.5, ease: "expo.out" }
-        );
-    };
-
     useEffect(() => {
-        animateSlide(0);
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, 8000);
+        return () => clearInterval(timer);
     }, []);
 
+    const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+    const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
     return (
-        <section className="h-screen relative overflow-hidden bg-[#080808] font-body" id="hero">
-            <style>
-                {`
-                .hero-heading-main {
-                    font-family: 'Cormorant Garamond', serif;
-                    font-style: italic;
-                    line-height: 0.8;
-                    letter-spacing: -0.05em;
-                }
-                .hero-vertical-progress {
-                    height: 200px;
-                    width: 2px;
-                    background: rgba(255,255,255,0.1);
-                }
-                .hero-progress-fill {
-                    width: 100%;
-                    height: 0%;
-                    background: #C5A059;
-                    transition: height 6s linear;
-                }
-                .swiper-slide-active .hero-progress-fill {
-                    height: 100%;
-                }
-                .text-stroke-premium {
-                    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
-                }
-                `}
-            </style>
-
-            <Swiper
-                modules={[Autoplay, EffectFade, Pagination]}
-                effect="fade"
-                autoplay={{ delay: 6000, disableOnInteraction: false }}
-                loop={true}
-                onSwiper={(swiper) => (swiperRef.current = swiper)}
-                onSlideChange={(swiper) => animateSlide(swiper.realIndex)}
-                className="h-full w-full"
-            >
-                {slides.map((slide, idx) => (
-                    <SwiperSlide key={idx} className="hero-slide-item relative">
-                        {/* Creative Video Mask */}
-                        <div className="absolute inset-0 z-0 overflow-hidden">
-                            <video 
-                                autoPlay muted loop playsinline 
-                                className="hero-video-bg w-full h-full object-cover brightness-[0.7] saturate-[0.8]"
-                            >
-                                <source src={slide.video} type="video/mp4" />
-                            </video>
-                            {/* Texture Overlay */}
-                            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
-                            {/* Darker Vignette for better readability */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
-                        </div>
-
-                        {/* Asymmetrical Content Layout */}
-                        <div className="absolute inset-0 flex items-center z-10">
-                            <div className="container-wide w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
-                                <div className="lg:col-span-10 xl:col-span-8 space-y-12">
-                                    <div className="space-y-6">
-                                        <div className="flex items-center gap-4">
-                                            <div className="hero-line h-px w-24 bg-gold origin-left"></div>
-                                            <span className="text-gold text-sm md:text-base font-bold tracking-[0.2em] uppercase">
-                                                {slide.sub}
-                                            </span>
-                                        </div>
-                                        
-                                        <h1 className="hero-heading-main flex flex-col">
-                                            <span className="text-[12vw] sm:text-[10vw] md:text-[8.5vw] text-white overflow-hidden drop-shadow-2xl">
-                                                {slide.title.split('').map((char, i) => (
-                                                    <span key={i} className="char inline-block">{char}</span>
-                                                ))}
-                                            </span>
-                                            <span className="text-[12vw] sm:text-[10vw] md:text-[8.5vw] text-transparent ml-6 md:ml-[8vw] text-stroke-premium drop-shadow-xl" style={{ filter: 'none' }}>
-                                                {slide.title2.split('').map((char, i) => (
-                                                    <span key={i} className="char inline-block">{char}</span>
-                                                ))}
-                                            </span>
-                                        </h1>
-                                    </div>
-
-                                    <div className="flex flex-col md:flex-row items-start md:items-center gap-12">
-                                        <p className="text-white/80 text-base md:text-lg max-w-md font-light leading-relaxed drop-shadow-md">
-                                            {slide.desc}
-                                        </p>
-                                        <div className="flex gap-4">
-                                            <a href="#profiles" className="group relative overflow-hidden px-12 py-5 bg-gold text-black text-base font-bold no-underline transition-all duration-500 hover:shadow-[0_0_30px_rgba(197,160,89,0.3)]">
-                                                <span className="relative z-10">Discover Available Companions</span>
-                                                <div className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500"></div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Large Background Watermark per slide */}
-                        <div className="absolute bottom-10 right-10 pointer-events-none opacity-[0.05] select-none text-right">
-                            <span className="text-[15vw] font-black uppercase text-white leading-none tracking-tighter">
-                                Empire
-                            </span>
-                        </div>
-                    </SwiperSlide>
+        <section id="home" className="hero-section" style={{
+            height: '100vh',
+            position: 'relative',
+            background: '#000',
+            overflow: 'hidden'
+        }}>
+            {/* Background Slider */}
+            <div className="hero-slider">
+                {slides.map((slide, index) => (
+                    <div
+                        key={index}
+                        className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+                        style={{ backgroundImage: `url(${slide.image})` }}
+                    >
+                        <div className="hero-overlay"></div>
+                    </div>
                 ))}
-            </Swiper>
+            </div>
 
-            {/* Modern Custom UI Overlays */}
-            <div className="absolute bottom-12 left-12 md:left-24 z-30 flex items-center gap-12">
-                {/* Index Indicator */}
-                <div className="flex items-baseline gap-2 overflow-hidden">
-                    <span className="text-gold text-4xl font-black italic">01</span>
-                    <span className="text-white/20 text-sm font-bold">/ 02</span>
+            {/* Static Content with Dynamic Text */}
+            <div className="container hero-container">
+                <div className="hero-content-wrapper">
+                    <div className="hero-badge anim-reveal">
+                        <span className="badge-line"></span>
+                        <span className="badge-txt">SINCE 2012</span>
+                        <span className="badge-line"></span>
+                    </div>
+
+                    <div className="hero-text-area">
+                        <h1 className="hero-title anim-reveal">
+                            {slides[currentSlide].title} <br />
+                            <span className="accent-text">{slides[currentSlide].subtitle}</span>
+                        </h1>
+
+                        <p className="hero-desc anim-reveal">
+                            {slides[currentSlide].desc}
+                        </p>
+
+                        <div className="hero-actions anim-reveal">
+                            <a href="#our-girls" className="btn btn-primary rounded-full">EXPLORE COLLECTION</a>
+                            <a href="tel:07368428158" className="btn btn-outline rounded-full">BOOK DISCREETLY</a>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <button className="nav-arrow prev" onClick={prevSlide} aria-label="Previous Slide" style={{ zIndex: 100 }}>
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
+            </button>
+            <button className="nav-arrow next" onClick={nextSlide} aria-label="Next Slide" style={{ zIndex: 100 }}>
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 18l6-6-6-6" /></svg>
+            </button>
+
+            {/* Pagination Dots & Thumbnails */}
+            <div className="hero-controls">
+                <div className="thumb-nav">
+                    {slides.map((slide, index) => (
+                        <div
+                            key={index}
+                            className={`thumb-item ${index === currentSlide ? 'active' : ''}`}
+                            onClick={() => setCurrentSlide(index)}
+                        >
+                            <img src={slide.image} alt="Slide Preview" />
+                            <div className="thumb-progress"></div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="dot-nav">
+                    {slides.map((_, index) => (
+                        <button
+                            key={index}
+                            className={`dot ${index === currentSlide ? 'active' : ''}`}
+                            onClick={() => setCurrentSlide(index)}
+                        ></button>
+                    ))}
+                </div>
+            </div>
+
+            <style jsx>{`
+                .hero-section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .hero-slider {
+                    position: absolute;
+                    inset: 0;
+                    z-index: 1;
+                }
+                .hero-slide {
+                    position: absolute;
+                    inset: 0;
+                    background-size: cover;
+                    background-position: center;
+                    opacity: 0;
+                    transition: opacity 1s ease-in-out;
+                    transform: scale(1.1);
+                }
+                .hero-slide.active {
+                    opacity: 1;
+                    transform: scale(1);
+                    transition: opacity 1s ease-in-out, transform 10s ease-out;
+                }
+                .hero-overlay {
+                    position: absolute;
+                    inset: 0;
+                    background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%);
+                }
+                .hero-container {
+                    position: relative;
+                    z-index: 10;
+                    width: 100%;
+                }
+                .hero-content-wrapper {
+                    max-width: 900px;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+                .hero-badge {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 15px;
+                    margin-bottom: 2rem;
+                }
+                .badge-line {
+                    width: 40px;
+                    height: 1px;
+                    background: var(--accent);
+                    opacity: 0.5;
+                }
+                .badge-txt {
+                    color: var(--accent);
+                    font-size: 11px;
+                    font-weight: 900;
+                    letter-spacing: 0.4em;
+                    text-transform: uppercase;
+                }
+                .hero-title {
+                    font-size: clamp(2.5rem, 6vw, 4rem);
+                    font-weight: 800;
+                    color: #fff;
+                    line-height: 1.1;
+                    margin-bottom: 2.5rem;
+                    text-transform: uppercase;
+                    letter-spacing: -0.02em;
+                    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                }
+                .accent-text {
+                    color: var(--accent);
+                }
+                .hero-desc {
+                    color: rgba(255,255,255,0.9);
+                    font-size: clamp(14px, 2vw, 17px);
+                    line-height: 1.8;
+                    margin: 0 auto 4rem;
+                    font-weight: 500;
+                    max-width: 680px;
+                    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+                }
+                .hero-actions {
+                    display: flex;
+                    justify-content: center;
+                    gap: 20px;
+                }
+                .hero-actions .btn {
+                    padding: 18px 45px;
+                }
+                .hero-actions .btn-outline {
+                    border-color: #fff;
+                    color: #fff;
+                }
+                .hero-actions .btn-outline:hover {
+                    background: #fff;
+                    color: #000;
+                    border-color: #fff;
+                }
+                .nav-arrow {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: rgba(0,0,0,0.3);
+                    border: 1px solid rgba(255,255,255,0.2);
+                    color: #fff;
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    z-index: 999;
+                    transition: 0.3s;
+                    backdrop-filter: blur(10px);
+                    border-radius: 50%;
+                }
+                .nav-arrow:hover {
+                    background: var(--accent);
+                    border-color: var(--accent);
+                    transform: translateY(-50%) scale(1.1);
+                }
+                .nav-arrow.prev { left: 40px; }
+                .nav-arrow.next { right: 40px; }
+                .nav-arrow svg {
+                    stroke: #fff !important;
+                    display: block;
+                }
+
+                /* Controls */
+                .hero-controls {
+                    position: absolute;
+                    bottom: 60px;
+                    left: 0;
+                    width: 100%;
+                    z-index: 20;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 30px;
+                }
+                .thumb-nav {
+                    display: flex;
+                    gap: 15px;
+                }
+                .thumb-item {
+                    width: 80px;
+                    height: 50px;
+                    overflow: hidden;
+                    border: 2px solid rgba(255,255,255,0.2);
+                    cursor: pointer;
+                    position: relative;
+                    transition: 0.3s;
+                }
+                .thumb-item img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    opacity: 0.5;
+                    transition: 0.3s;
+                }
+                .thumb-item.active {
+                    border-color: var(--accent);
+                    transform: translateY(-5px);
+                }
+                .thumb-item.active img {
+                    opacity: 1;
+                    transform: scale(1.1);
+                }
+                .thumb-progress {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 3px;
+                    background: var(--accent);
+                    width: 0;
+                }
+                .thumb-item.active .thumb-progress {
+                    width: 100%;
+                    transition: width 8s linear;
+                }
                 
-                {/* Vertical Progress Bar */}
-                <div className="hero-vertical-progress overflow-hidden relative hidden md:block">
-                    <div className="hero-progress-fill absolute bottom-0 left-0"></div>
-                </div>
-            </div>
+                .dot-nav {
+                    display: flex;
+                    gap: 12px;
+                }
+                .dot {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: rgba(255,255,255,0.3);
+                    border: none;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    padding: 0;
+                }
+                .dot.active {
+                    background: var(--accent);
+                    transform: scale(1.5);
+                }
 
-            {/* Custom Navigation Arrows (Architectural Style) */}
-            <div className="absolute bottom-12 right-12 z-30 flex gap-4">
-                <button 
-                    onClick={() => swiperRef.current?.slidePrev()}
-                    className="w-16 h-16 border border-white/10 flex items-center justify-center text-white/40 hover:text-gold hover:border-gold transition-all duration-500 group bg-black/20 backdrop-blur-md"
-                >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                </button>
-                <button 
-                    onClick={() => swiperRef.current?.slideNext()}
-                    className="w-16 h-16 border border-white/10 flex items-center justify-center text-white/40 hover:text-gold hover:border-gold transition-all duration-500 group bg-black/20 backdrop-blur-md"
-                >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </button>
-            </div>
+                @media (max-width: 1024px) {
+                    .nav-arrow { display: none; }
+                    .thumb-nav { display: none; }
+                    .hero-actions { flex-direction: column; gap: 15px; }
+                    .hero-actions .btn { width: 100%; }
+                }
+            `}</style>
         </section>
     );
 };

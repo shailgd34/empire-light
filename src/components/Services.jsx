@@ -6,28 +6,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
     const services = [
-        { 
-            title: 'Social Dates', 
-            desc: 'The perfect companion for dinners, parties, or any social event where you want a beautiful girl by your side.' 
+        {
+            title: 'Social Dates',
+            desc: 'The perfect companion for dinners, parties, or any social event where you want a beautiful girl by your side.'
         },
-        { 
-            title: 'Personal Meetings', 
-            desc: 'Private and relaxed time together at your hotel or home. Our girls are friendly, beautiful, and great company.' 
+        {
+            title: 'Personal Meetings',
+            desc: 'Private and relaxed time together at your hotel or home. Our girls are friendly, beautiful, and great company.'
         },
-        { 
-            title: 'Elite Outcalls', 
-            desc: 'We visit all major hotels and private addresses across Sheffield and the North with full discretion.' 
+        {
+            title: 'Elite Outcalls',
+            desc: 'We visit all major hotels and private addresses across Sheffield and the North with full discretion.'
         }
     ];
 
     useEffect(() => {
-        gsap.fromTo(".service-item", 
+        gsap.fromTo(".service-item",
             { y: 60, opacity: 0 },
-            { 
-                y: 0, 
-                opacity: 1, 
-                stagger: 0.2, 
-                duration: 1.5, 
+            {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+                duration: 1.5,
                 ease: "expo.out",
                 scrollTrigger: {
                     trigger: "#services",
@@ -38,52 +38,87 @@ const Services = () => {
     }, []);
 
     return (
-        <section className="bg-bg-secondary py-16 md:py-24 relative overflow-hidden" id="services">
-            {/* Background Branding */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02] select-none">
-                <span className="text-[25vw] font-bold uppercase text-black leading-none">Services</span>
-            </div>
-
-            <div className="container-wide relative z-10">
-                <div className="max-w-4xl mb-12 md:mb-16 anim-section-reveal">
-                    <div className="flex items-center gap-4 mb-4">
-                        <div className="w-8 h-px bg-gold/30"></div>
-                        <span className="text-gold font-bold text-xs tracking-[0.3em] uppercase">Expert Assistance</span>
-                    </div>
-                    <h2 className="text-4xl md:text-6xl font-bold leading-tight text-black">
-                        What <span className="text-transparent italic" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.25)' }}>We Offer</span>
+        <section id="services" className="section" style={{ background: 'var(--bg-secondary)', padding: '80px 0' }}>
+            <div className="container">
+                <div className="section-header anim-reveal">
+                    <p style={{ color: 'var(--accent)', fontSize: '12px', fontWeight: '900', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Our Expertise</p>
+                    <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: '800', color: '#111', textTransform: 'uppercase' }}>
+                        Our <span style={{ color: 'var(--accent)' }}>Services</span>
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-px md:bg-black/5 border border-black/5 overflow-hidden">
+                <div className="services-grid anim-reveal">
                     {services.map((service, idx) => (
-                        <div key={idx} className="service-item group p-10 md:p-14 bg-bg-primary hover:bg-black transition-all duration-1000 relative">
-                            {/* Decorative Corner Element */}
-                            <div className="absolute top-0 right-0 w-20 h-20 bg-gold/5 group-hover:bg-gold/10 transition-colors -translate-y-1/2 translate-x-1/2 rotate-45"></div>
-                            
-                            <div className="relative z-10 space-y-8">
-                                <div className="flex items-baseline gap-4">
-                                    <span className="text-gold text-4xl font-black italic opacity-20 group-hover:opacity-100 transition-all duration-700">0{idx + 1}</span>
-                                    <div className="w-6 h-px bg-gold/30"></div>
-                                </div>
-                                
-                                <div className="space-y-4">
-                                    <h3 className="text-2xl font-bold text-black group-hover:text-gold transition-colors duration-700">{service.title}</h3>
-                                    <p className="text-black/60 text-base leading-relaxed group-hover:text-white/60 transition-colors duration-700">
-                                        {service.desc}
-                                    </p>
-                                </div>
-
-                                <div className="pt-6 flex items-center gap-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 delay-100">
-                                    <span className="text-white text-xs font-bold uppercase tracking-widest">Book This Service</span>
-                                    <div className="w-8 h-px bg-gold"></div>
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C5A059" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </div>
-                            </div>
+                        <div key={idx} className="service-item">
+                            <div className="service-num">0{idx + 1}</div>
+                            <h3 className="service-name">{service.title}</h3>
+                            <p className="service-txt">{service.desc.replace('companion', 'model')}</p>
+                            <a href="#how-to-book" className="service-btn">
+                                LEARN MORE <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                            </a>
                         </div>
                     ))}
                 </div>
             </div>
+
+            <style jsx>{`
+                .services-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 30px;
+                }
+                .service-item {
+                    background: #fff;
+                    padding: 40px;
+                    transition: 0.4s var(--ease-expo);
+                    border: 1px solid #f0f0f0;
+                }
+                .service-item:hover {
+                    border-color: var(--accent);
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+                }
+                .service-num {
+                    font-size: 10px;
+                    font-weight: 900;
+                    color: var(--accent);
+                    letter-spacing: 0.2em;
+                    margin-bottom: 20px;
+                }
+                .service-name {
+                    font-size: 16px;
+                    font-weight: 800;
+                    color: #111;
+                    margin-bottom: 15px;
+                    letter-spacing: 0.05em;
+                }
+                .service-txt {
+                    font-size: 14px;
+                    color: #666;
+                    line-height: 1.7;
+                    margin-bottom: 30px;
+                    font-weight: 500;
+                }
+                .service-btn {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    text-decoration: none;
+                    font-weight: 900;
+                    font-size: 10px;
+                    color: #111;
+                    letter-spacing: 0.1em;
+                    text-transform: uppercase;
+                    transition: 0.3s;
+                }
+                .service-item:hover .service-btn {
+                    color: var(--accent);
+                    gap: 12px;
+                }
+                @media (max-width: 1024px) {
+                    .services-grid { grid-template-columns: 1fr; }
+                }
+            `}</style>
         </section>
     );
 };
